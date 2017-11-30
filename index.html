@@ -40,9 +40,9 @@
 		}
 	</script>
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="theme/frontend/js/jquery-2.2.1.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="theme/frontend/js/jquery-2.2.1.min.js"></script>
 </head>
 <body>
 	<header class="clear">
@@ -88,7 +88,8 @@
 					</div>
 					<div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
 						<div class="row">
-							<nav class="box-menu-top">
+							<div class="menu-collapse">Menu</div>
+							<nav class="box-menu-top" id="menu-primary">
 								<div class="list-menu-1">
 
 									<div class="item-menu-1">
@@ -141,6 +142,81 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+		    waitJquery(function(){
+		        // var stickyNavTop = $('.full-menubar').offset().top;
+		 
+		        // var stickyNav = function(){
+		        // var scrollTop = $(window).scrollTop();
+		              
+		        // if (scrollTop > stickyNavTop) { 
+		        //         $('.full-menubar').addClass('sticky');
+		        //     } else {
+		        //         $('.full-menubar').removeClass('sticky'); 
+		        //     }
+		        // };
+		         
+		        // stickyNav();
+		        //     $(window).scroll(function() {
+		        //       stickyNav();
+		        // });
+
+		        jQuery(".menu-collapse").click(function(){jQuery("#menu-primary").slideToggle('fast')});
+
+		                    // sidebar OPEN        
+		        jQuery('.sidebar_open').click(function(event){
+		            event.preventDefault();
+		            $('.right_sidebar').css({
+		                'right': '0px',
+		            });
+		            $('#full-container').css({
+		                'margin-left': '-300px',
+		            });
+		            $('.overlay').addClass('overlay_on');
+		        });
+		        // sidebar CLOSE   
+		        $('.sidebar_btn_close, .overlay').click(function(event){
+		            event.preventDefault();
+		            $('.right_sidebar').css({
+		                'right': '-300px'
+		            });
+		            $('#full-container').css({
+		                'margin-left': '0px'
+		            });
+		            $('.overlay').removeClass('overlay_on');
+		        });
+
+
+		    });
+		    // Dropdown menu
+
+		    waitJquery(function(){
+
+		        if( $(window).width() < 991 ){
+		            var obj = jQuery('#menu-primary li:has(ul)');
+		            obj.prepend('<span class="submenu-button fa fa-angle-right"></span>');
+		            
+		            jQuery('.submenu-button').click(function(e){  
+		                e.preventDefault();
+		                  if (jQuery(this).parent().children('ul.sub-menu').is(':visible')) {
+		                       jQuery(this).parent().children('ul.sub-menu').slideUp('fast');
+		                  } else {
+		                       jQuery(this).parent().children('ul.sub-menu').slideDown('fast');
+		                  }
+		        
+		                var $this = jQuery(this);
+		                $this.toggleClass('fa-angle-right');
+		                if($this.hasClass('fa-angle-right')){
+		                    $this.removeClass('fa-angle-down').addClass('fa-angle-right');         
+		                } else {
+		                    $this.removeClass('fa-angle-right').addClass('fa-angle-down');
+		                }
+		            });
+		        }
+
+		    });
+		</script>
 	</header><!-- End header -->
 
 	<section class="box box-slideshow clear">
@@ -176,131 +252,172 @@
 		<div class="slide_search">
 			<div class="inner-container">
 				<div class="tab_book">
-					<div id="tabslide" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-			        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-			            <li class="q_tab ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabslide-1" aria-labelledby="ui-id-7" aria-selected="true">
-			            	<a href="#tabslide-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-7"><img src="theme/frontend/images/zoom-tool.png"> Tìm kiếm nhanh</a></li>
-			            <li class="a_tab ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabslide-2" aria-labelledby="ui-id-8" aria-selected="false">
-			            	<a href="#tabslide-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-8"><img src="theme/frontend/images/parameters.png">Tìm kiếm nâng cao</a></li>
+					<div id="tabslide">
+			        <ul>
+			            <li class="q_tab">
+			            	<a href="#tabslide-1"><img src="theme/frontend/images/zoom-tool.png"> Tìm kiếm nhanh</a>
+			            </li>
+			            <li class="a_tab">
+			            	<a href="#tabslide-2"><img src="theme/frontend/images/parameters.png">Tìm kiếm nâng cao</a>
+			            </li>
 			        </ul>
 			        
-			        <div id="tabslide-1" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false" aria-live="polite">
+			        <div id="tabslide-1">
 			        	<div class="q_search limit">
 			        		<form method="POST" action="tim-kiem" name="">
-					        	<div class="key_word col-md-2">
+					        	<div class="key_word col-md-2 pd0">
 					            	<input type="text" name="keyword" placeholder="Nhập tên Tour..." value="">
-				            </div>
+				            	</div>
 						        <div class="date_time_picker col-md-3">
-											<div class="dt_picker dt_picker_1 col-sm-6 pd0">
-												<input type="text" value="" name="from_date" id="dtq-1" placeholder="Bắt đầu" class="hasDatepicker">
-											</div>
-											<div class="dt_picker dt_picker_2 col-sm-6 pd0">
-												<input type="text" value="" name="to_date" id="dtq-2" placeholder="Kết thúc" class="hasDatepicker">
-											</div>
-											<script>
-												jQuery(document).ready(function($) {
-													$( "#dtq-1" ).datepicker({
-													  dateFormat: "dd/mm/yy"
-													});
-													$( "#dtq-2" ).datepicker({
-													  dateFormat: "dd/mm/yy"
-													});
-												});
-											</script>	
-										</div>
+									<div class="dt_picker dt_picker_1 col-sm-6 pd0">
+										<input type="text" value="" name="from_date" id="dtq-1" placeholder="Bắt đầu"/>
+									</div>
+									<div class="dt_picker dt_picker_2 col-sm-6 pd0">
+										<input type="text" value="" name="to_date" id="dtq-2" placeholder="Kết thúc"/>
+									</div>
+									<script>
+										jQuery(document).ready(function($) {
+											$( "#dtq-1" ).datepicker({
+											  dateFormat: "dd/mm/yy"
+											});
+											$( "#dtq-2" ).datepicker({
+											  dateFormat: "dd/mm/yy"
+											});
+										});
+									</script>	
+								</div>
 
-										<div class="search_prices col-md-5">
-											<div id="slider-range1" class="col-6 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 25.3333%; width: 42.6667%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 6.66667%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6667%;"></a><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 6.66667%; width: 60%;"></div></div>
-											<input type="text" id="amount1" class="col-6" value="" name="price" style="border:0; color:#f6931f; font-weight:bold;">
+								<div class="search_prices search_prices_1 col-md-5">
+									<div id="slider-range1" class="col-md-6"></div>
+									<input type="text" id="amount1" class="col-md-6" value="" name="price" style="border:0; color:#f6931f; font-weight:bold;">
 
-											<script>
-												jQuery(document).ready(function($) {
-													$( "#slider-range1" ).slider({
-												      	step: 100000,
-												      	range: true,
-												      	min: 0,
-												      	max: 15000000,
-												      	values: [ 1000000, 10000000 ],
-												      	slide: function( event, ui ) {
-												        	$( "#amount1" ).val( ui.values[ 0 ] + "₫" + " - " + ui.values[ 1 ] +"₫" );
-												      	}
-												    });
-												    $( "#amount1" ).val( $( "#slider-range1" ).slider( "values", 0 ) + "₫" + " - " + $( "#slider-range1" ).slider( "values", 1 ) + "₫" );
-												});
-											</script>
-										</div>
+									<script>
+										jQuery(document).ready(function($) {
+											$( "#slider-range1" ).slider({
+										      	step: 100000,
+										      	range: true,
+										      	min: 0,
+										      	max: 15000000,
+										      	values: [ 1000000, 10000000 ],
+										      	slide: function( event, ui ) {
+										        	$( "#amount1" ).val( ui.values[ 0 ] + "₫" + " - " + ui.values[ 1 ] +"₫" );
+										      	}
+										    });
+										    $( "#amount1" ).val( $( "#slider-range1" ).slider( "values", 0 ) + "₫" + " - " + $( "#slider-range1" ).slider( "values", 1 ) + "₫" );
+										});
+									</script>
+								</div>
 
-										<div class="col-md-2">
-											<input type="submit" name="submit" value="Tìm kiếm" id="s">
-										</div>
-									</form>
+								<div class="col-md-2 pd0">
+									<input type="submit" name="submit" value="Tìm kiếm" id="s">
+								</div>
+							</form>
 			        	</div><!-- #q_search -->
 
 			        </div>
 
-			        <div id="tabslide-2" aria-labelledby="ui-id-8" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;" aria-live="polite">
+			        <div id="tabslide-2">
 			        	<div class="a_search">
-			            <div class="adv_search">
-										<form method="POST" action="tim-kiem" name="">
-											<div class="tax_select col-md-6">
-												<div class="tax_s tax_1 col-md-6"><select name="taxonomy[dd_dulich]" id="name"><option value="">Tất cả Địa điểm du lịch</option><option value="chau-a">Châu Á</option><option value="chau-au">Châu Âu</option><option value="chau-my">Châu Mỹ</option><option value="chau-phi">Châu Phi</option><option value="chau-uc">Châu Úc</option></select></div><div class="tax_s tax_2 col-md-6"><select name="taxonomy[ht_dulich]" id="name"><option value="">Tất cả hình thức du lịch</option><option value="du-lich-am-thuc">Du lịch ẩm thực</option><option value="du-lich-tham-quan">Du lịch tham quan</option><option value="du-lich-van-hoa">Du lịch văn hóa</option><option value="du-lich-xanh">Du lịch xanh</option><option value="teambuilding">Teambuilding</option></select></div>												</div>
-
-											<div class="per_date col-md-3">
-												<select name="tour_time"><option value="">Tất cả thời gian tour</option><option value="Chọn">Chọn</option><option value="1-3 Ngày">1-3 Ngày</option><option value="3-6 Ngày">3-6 Ngày</option><option value="6-9 Ngày">6-9 Ngày</option><option value="9-12 Ngày">9-12 Ngày</option></select>												</div>
-
-												<div class="per_number col-md-3">
-													<select name="per_num"><option value="">Tất cả số người</option><option value="Chọn">Chọn</option><option value="1 Người">1 Người</option><option value="2 Người">2 Người</option><option value="4 Người">4 Người</option><option value="5 Người">5 Người</option><option value="6 Người">6 Người</option><option value="7 Người">7 Người</option><option value="8 Người">8 Người</option><option value="9 Người">9 Người</option><option value="Nhiều hơn">Nhiều hơn</option></select>
-												</div>
-
-												<div class="date_time_picker col-md-3">
-													<div class="dt_picker dt_picker_1 col-md-6">
-														<input type="text" value="" name="from_date" id="dta-1" placeholder="Bắt đầu" class="hasDatepicker">
-													</div>
-													<div class="dt_picker dt_picker_2 col-md-6">
-														<input type="text" value="" name="to_date" id="dta-2" placeholder="Kết thúc" class="hasDatepicker">
-													</div>
-													<script>
-														jQuery(document).ready(function($) {
-															$( "#dta-1" ).datepicker({
-															  dateFormat: "dd/mm/yy"
-															});
-															$( "#dta-2" ).datepicker({
-															  dateFormat: "dd/mm/yy"
-															});
-														});
-													</script>	
-												</div>
-
-											<div class="search_prices limit col-md-6">
-												<div id="slider-range2" class="col-6 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 6.66667%; width: 60%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 6.66667%;"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6667%;"></a><div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 6.66667%; width: 60%;"></div></div>
-												<input type="text" id="amount2" class="col-6" style="border:0; color:#f6931f; font-weight:bold;">
-
-												<script>
-													jQuery(document).ready(function($) {
-														$( "#slider-range2" ).slider({
-													      	step: 100000,
-													      	range: true,
-													      	min: 0,
-													      	max: 15000000,
-													      	values: [ 1000000, 10000000 ],
-													      	slide: function( event, ui ) {
-													        	$( "#amount2" ).val( ui.values[ 0 ] + "₫" + " - " + ui.values[ 1 ] +"₫" );
-													      	}
-													    });
-													    $( "#amount2" ).val( $( "#slider-range2" ).slider( "values", 0 ) + "₫" + " - " + $( "#slider-range2" ).slider( "values", 1 ) + "₫" );
-													});
-												</script>
-											</div>
-											<input type="submit" name="submit" value="Tìm kiếm" id="s" class="col-3">
-										</form>
+			            	<div class="adv_search">
+								<form method="POST" action="tim-kiem" name="">
+									<div class="tax_select col-md-6 pd0">
+									    <div class="tax_s tax_1 col-md-6">
+									        <select name="taxonomy[dd_dulich]" id="name">
+									        <option value="">Tất cả Địa điểm du lịch</option>
+									        <option value="chau-a">Châu Á</option>
+									        <option value="chau-au">Châu Âu</option>
+									        <option value="chau-my">Châu Mỹ</option>
+									        <option value="chau-phi">Châu Phi</option>
+									        <option value="chau-uc">Châu Úc</option>
+									      </select>
+									    </div>
+									    <div class="tax_s tax_2 col-md-6">
+									        <select name="taxonomy[ht_dulich]" id="name">
+									        <option value="">Tất cả hình thức du lịch</option>
+									        <option value="du-lich-am-thuc">Du lịch ẩm thực</option>
+									        <option value="du-lich-tham-quan">Du lịch tham quan</option>
+									        <option value="du-lich-van-hoa">Du lịch văn hóa</option>
+									        <option value="du-lich-xanh">Du lịch xanh</option>
+									        <option value="teambuilding">Teambuilding</option>
+									      </select>
+									    </div>
 									</div>
-								</div>
+									<div class="per_date col-md-3">
+									    <select name="tour_time">
+									      <option value="">Tất cả thời gian tour</option>
+									      <option value="Chọn">Chọn</option>
+									      <option value="1-3 Ngày">1-3 Ngày</option>
+									      <option value="3-6 Ngày">3-6 Ngày</option>
+									      <option value="6-9 Ngày">6-9 Ngày</option>
+									      <option value="9-12 Ngày">9-12 Ngày</option>
+									    </select>
+									</div>
+									<div class="per_number col-md-3">
+									    <select name="per_num">
+									      <option value="">Tất cả số người</option>
+									      <option value="Chọn">Chọn</option>
+									      <option value="1 Người">1 Người</option>
+									      <option value="2 Người">2 Người</option>
+									      <option value="4 Người">4 Người</option>
+									      <option value="5 Người">5 Người</option>
+									      <option value="6 Người">6 Người</option>
+									      <option value="7 Người">7 Người</option>
+									      <option value="8 Người">8 Người</option>
+									      <option value="9 Người">9 Người</option>
+									      <option value="Nhiều hơn">Nhiều hơn</option>
+									    </select>
+									</div>
+
+									<div class="date_time_picker col-md-3">
+									    <div class="dt_picker dt_picker_1 col-md-6 pd0">
+									        <input type="text" value="" name="from_date" id="dta-1" placeholder="Bắt đầu"/>
+									    </div>
+									    <div class="dt_picker dt_picker_2 col-md-6 pd0">
+									        <input type="text" value="" name="to_date" id="dta-2" placeholder="Kết thúc"/>
+									    </div>
+									    <script>
+									        jQuery(document).ready(function($) {
+									            $("#dta-1").datepicker({
+									                dateFormat: "dd/mm/yy"
+									            });
+									            $("#dta-2").datepicker({
+									                dateFormat: "dd/mm/yy"
+									            });
+									        });
+									    </script>
+									</div>
+
+									<div class="search_prices col-md-6">
+									    <div id="slider-range2" class="col-md-6"></div>
+									    <input type="text" id="amount2" class="col-md-6" style="border:0; color:#f6931f; font-weight:bold;">
+									    <script>
+									        jQuery(document).ready(function($) {
+									            $("#slider-range2").slider({
+									                step: 100000,
+									                range: true,
+									                min: 0,
+									                max: 15000000,
+									                values: [1000000, 10000000],
+									                slide: function(event, ui) {
+									                    $("#amount2").val(ui.values[0] + "₫" + " - " + ui.values[1] + "₫");
+									                }
+									            });
+									            $("#amount2").val($("#slider-range2").slider("values", 0) + "₫" + " - " + $("#slider-range2").slider("values", 1) + "₫");
+									        });
+									    </script>
+									</div>
+									<div class="col-md-3">
+										<input type="submit" name="submit" value="Tìm kiếm" id="s" class="timkiem1">
+									</div>
+								</form>
+							</div>
+						</div>
 			        </div>
 
 				    </div>
 			   </div>
 			</div>
-	    <script>
+	    	<script>
 				waitJquery(function(){
 					$( "#tabslide" ).tabs();
 				});
@@ -336,7 +453,7 @@
 					    </div>
 
 					    <div class="title_wrap">
-					        <h4>Hallstatt</h4>
+					        <h4>Hallstatt 881</h4>
 					    </div>
 
 					    <div class="tour_detail flex">
@@ -352,15 +469,511 @@
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit.</p>
 							<div class="book_wrap wrapper">
 								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đặt ngay</a>
+								<div class="form-book-831 form-book">
+								    <div role="form" class="wpcf7" id="wpcf7-f784-o1" lang="vi" dir="ltr">
+								        <div class="screen-reader-response"></div>
+								        <form action="/#wpcf7-f784-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+								            <div style="display: none;">
+								                <input type="hidden" name="_wpcf7" value="784" />
+								                <input type="hidden" name="_wpcf7_version" value="4.7" />
+								                <input type="hidden" name="_wpcf7_locale" value="vi" />
+								                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f784-o1" />
+								                <input type="hidden" name="_wpnonce" value="06af169aff" />
+								            </div>
+											<p>
+											  <span class="wpcf7-form-control-wrap your-name">
+											    <input type="text" name="tour-name" value="Tour du lịch: Hallstatt 881" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" disabled />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-name">
+											    <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-email">
+											    <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap min1">
+											    <input type="number" name="min:1" value="" class="wpcf7-form-control wpcf7-number wpcf7-validates-as-number" aria-invalid="false" placeholder="Số người" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap tour-name">
+											    <input type="text" name="tour-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Tên tour" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap ngaydat">
+											    <input type="date" name="ngaydat" value="" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" placeholder="dd/mm/yy" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-message">
+											    <textarea name="your-message" cols="40" rows="6" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Thông tin thêm"></textarea>
+											  </span>
+											  <br />
+											  <input type="submit" value="Đặt ngay" class="wpcf7-form-control wpcf7-submit" />
+											</p>
+								            <div class="wpcf7-response-output wpcf7-display-none"></div>
+								        </form>
+								    </div>
+								</div>
+
 								<a href="javascript:void(0)" id="map-831" class="book_btn map" title="Xem bản đồ">
 									<i class="fa fa-map-marker"></i>
 								</a>
+								<div class="form-map-831 form-map">
+								    <div class="map_iframe">
+								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" frameborder="0" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
+								    </div>
+								</div>
+
 								<a href="javascript:void(0)" title="Xem Video" id="video-831" class="book_btn video">
 									<i class="fa fa-film "></i>
 								</a>
+								<div class="form-video-831 form-video">
+								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" gesture="media" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
+								</div>
+
 							</div>
 					    </div>
 
+						<script>
+						    $(function() {
+						        // Đặt hàng
+						        $(".form-book-831").dialog({
+						            modal: true,
+						            width: 400,
+						            title: "Để lại thông tin",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_1",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+
+						        $("#book-831").click(function() {
+						            $(".form-book-831").dialog("open");
+						        });
+
+						        // Bản đồ
+						        $(".form-map-831").dialog({
+						            modal: true,
+						            width: 450,
+						            title: "Vị trí",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_1",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+
+						        $("#map-831").click(function() {
+						            $(".form-map-831").dialog("open");
+						            //    setTimeout(function() {
+						            //     google.maps.event.trigger(map, 'resize');
+						            // }, 200);
+
+						        });
+
+
+						        // Video
+						        $(".form-video-831").dialog({
+						            modal: true,
+						            width: 500,
+						            title: "Video",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_2",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+						        $(document).trigger("resize, scroll");
+						        $("#video-831").click(function() {
+						            $(".form-video-831").dialog("open");
+						        });
+
+
+						    });
+						</script>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-4 col-sm-4 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="price_fade">
+					            <p>2.000.000 ₫</p>
+					        </div>
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="title_wrap">
+					        <h4>Hallstatt 882</h4>
+					    </div>
+
+					    <div class="tour_detail flex">
+					        <div class="vitri_tour bg_color_1">
+					            <div class="white"><i class="fa fa-location-arrow"></i> Châu Âu</div>
+					        </div>
+					        <div class="loai_hinh_tour">
+					            <div class="white"><i class="fa fa-info"></i> Teambuilding</div>
+					        </div>
+					    </div>
+
+					    <div class="book_tour_wrap">
+					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit.</p>
+							<div class="book_wrap wrapper">
+								<a href="javascript:void(0)" id="book-882" class="book_btn book">Đặt ngay</a>
+								<div class="form-book-882 form-book">
+								    <div role="form" class="wpcf7" id="wpcf7-f784-o1" lang="vi" dir="ltr">
+								        <div class="screen-reader-response"></div>
+								        <form action="/#wpcf7-f784-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+								            <div style="display: none;">
+								                <input type="hidden" name="_wpcf7" value="784" />
+								                <input type="hidden" name="_wpcf7_version" value="4.7" />
+								                <input type="hidden" name="_wpcf7_locale" value="vi" />
+								                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f784-o1" />
+								                <input type="hidden" name="_wpnonce" value="06af169aff" />
+								            </div>
+											<p>
+											  <span class="wpcf7-form-control-wrap your-name">
+											    <input type="text" name="tour-name" value="Tour du lịch: Hallstatt 882" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" disabled />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-name">
+											    <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-email">
+											    <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap min1">
+											    <input type="number" name="min:1" value="" class="wpcf7-form-control wpcf7-number wpcf7-validates-as-number" aria-invalid="false" placeholder="Số người" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap tour-name">
+											    <input type="text" name="tour-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Tên tour" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap ngaydat">
+											    <input type="date" name="ngaydat" value="" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" placeholder="dd/mm/yy" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-message">
+											    <textarea name="your-message" cols="40" rows="6" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Thông tin thêm"></textarea>
+											  </span>
+											  <br />
+											  <input type="submit" value="Đặt ngay" class="wpcf7-form-control wpcf7-submit" />
+											</p>
+								            <div class="wpcf7-response-output wpcf7-display-none"></div>
+								        </form>
+								    </div>
+								</div>
+
+								<a href="javascript:void(0)" id="map-882" class="book_btn map" title="Xem bản đồ">
+									<i class="fa fa-map-marker"></i>
+								</a>
+								<div class="form-map-882 form-map">
+								    <div class="map_iframe">
+								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" frameborder="0" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
+								    </div>
+								</div>
+
+								<a href="javascript:void(0)" title="Xem Video" id="video-882" class="book_btn video">
+									<i class="fa fa-film "></i>
+								</a>
+								<div class="form-video-882 form-video">
+								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" gesture="media" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
+								</div>
+
+							</div>
+					    </div>
+
+						<script>
+						    $(function() {
+						        // Đặt hàng
+						        $(".form-book-882").dialog({
+						            modal: true,
+						            width: 400,
+						            title: "Để lại thông tin",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_1",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+
+						        $("#book-882").click(function() {
+						            $(".form-book-882").dialog("open");
+						        });
+
+						        // Bản đồ
+						        $(".form-map-882").dialog({
+						            modal: true,
+						            width: 450,
+						            title: "Vị trí",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_1",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+
+						        $("#map-882").click(function() {
+						            $(".form-map-882").dialog("open");
+						            //    setTimeout(function() {
+						            //     google.maps.event.trigger(map, 'resize');
+						            // }, 200);
+
+						        });
+
+
+						        // Video
+						        $(".form-video-882").dialog({
+						            modal: true,
+						            width: 500,
+						            title: "Video",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_2",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+						        $(document).trigger("resize, scroll");
+						        $("#video-882").click(function() {
+						            $(".form-video-882").dialog("open");
+						        });
+
+
+						    });
+						</script>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-4 col-sm-4 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="price_fade">
+					            <p>2.000.000 ₫</p>
+					        </div>
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="title_wrap">
+					        <h4>Hallstatt 883</h4>
+					    </div>
+
+					    <div class="tour_detail flex">
+					        <div class="vitri_tour bg_color_1">
+					            <div class="white"><i class="fa fa-location-arrow"></i> Châu Âu</div>
+					        </div>
+					        <div class="loai_hinh_tour">
+					            <div class="white"><i class="fa fa-info"></i> Teambuilding</div>
+					        </div>
+					    </div>
+
+					    <div class="book_tour_wrap">
+					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit.</p>
+							<div class="book_wrap wrapper">
+								<a href="javascript:void(0)" id="book-883" class="book_btn book">Đặt ngay</a>
+								<div class="form-book-883 form-book">
+								    <div role="form" class="wpcf7" id="wpcf7-f784-o1" lang="vi" dir="ltr">
+								        <div class="screen-reader-response"></div>
+								        <form action="/#wpcf7-f784-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+								            <div style="display: none;">
+								                <input type="hidden" name="_wpcf7" value="784" />
+								                <input type="hidden" name="_wpcf7_version" value="4.7" />
+								                <input type="hidden" name="_wpcf7_locale" value="vi" />
+								                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f784-o1" />
+								                <input type="hidden" name="_wpnonce" value="06af169aff" />
+								            </div>
+											<p>
+											  <span class="wpcf7-form-control-wrap your-name">
+											    <input type="text" name="tour-name" value="Tour du lịch: Hallstatt 883" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" disabled />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-name">
+											    <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-email">
+											    <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap min1">
+											    <input type="number" name="min:1" value="" class="wpcf7-form-control wpcf7-number wpcf7-validates-as-number" aria-invalid="false" placeholder="Số người" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap tour-name">
+											    <input type="text" name="tour-name" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Tên tour" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap ngaydat">
+											    <input type="date" name="ngaydat" value="" class="wpcf7-form-control wpcf7-date wpcf7-validates-as-date" aria-invalid="false" placeholder="dd/mm/yy" />
+											  </span>
+											  <br />
+											  <span class="wpcf7-form-control-wrap your-message">
+											    <textarea name="your-message" cols="40" rows="6" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Thông tin thêm"></textarea>
+											  </span>
+											  <br />
+											  <input type="submit" value="Đặt ngay" class="wpcf7-form-control wpcf7-submit" />
+											</p>
+								            <div class="wpcf7-response-output wpcf7-display-none"></div>
+								        </form>
+								    </div>
+								</div>
+
+								<a href="javascript:void(0)" id="map-883" class="book_btn map" title="Xem bản đồ">
+									<i class="fa fa-map-marker"></i>
+								</a>
+								<div class="form-map-883 form-map">
+								    <div class="map_iframe">
+								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" frameborder="0" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
+								    </div>
+								</div>
+
+								<a href="javascript:void(0)" title="Xem Video" id="video-883" class="book_btn video">
+									<i class="fa fa-film "></i>
+								</a>
+								<div class="form-video-883 form-video">
+								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" gesture="media" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
+								</div>
+
+							</div>
+					    </div>
+
+						<script>
+						    $(function() {
+						        // Đặt hàng
+						        $(".form-book-883").dialog({
+						            modal: true,
+						            width: 400,
+						            title: "Để lại thông tin",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_1",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+
+						        $("#book-883").click(function() {
+						            $(".form-book-883").dialog("open");
+						        });
+
+						        // Bản đồ
+						        $(".form-map-883").dialog({
+						            modal: true,
+						            width: 450,
+						            title: "Vị trí",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_1",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+
+						        $("#map-883").click(function() {
+						            $(".form-map-883").dialog("open");
+						            //    setTimeout(function() {
+						            //     google.maps.event.trigger(map, 'resize');
+						            // }, 200);
+
+						        });
+
+
+						        // Video
+						        $(".form-video-883").dialog({
+						            modal: true,
+						            width: 500,
+						            title: "Video",
+						            autoOpen: false,
+						            draggable: false,
+						            dialogClass: "popup-book title_color_2",
+						            hide: {
+						                effect: "scale",
+						                easing: "easeInBack"
+						            },
+						            show: {
+						                effect: "scale",
+						                easing: "easeOutBack"
+						            }
+						        });
+						        $(document).trigger("resize, scroll");
+						        $("#video-883").click(function() {
+						            $(".form-video-883").dialog("open");
+						        });
+
+
+						    });
+						</script>
+
 					</div>
 
 				</div>
@@ -493,187 +1106,91 @@
 
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit.</p>
-									<div class="book_wrap wrapper">
-										<a href="javascript:void(0)" id="book-id" class="book_btn book">Đặt ngay</a>
-										<a href="javascript:void(0)" id="map-id" class="book_btn map" title="Xem bản đồ">
-											<i class="fa fa-map-marker"></i>
-										</a>
-										<a href="javascript:void(0)" title="Xem Video" id="video-id" class="book_btn video">
-											<i class="fa fa-film "></i>
-										</a>
-									</div>
-					    </div>
+							<div class="book_wrap wrapper">
+								<a href="javascript:void(0)" id="book-id" class="book_btn book">Đặt ngay</a>
+								<a href="javascript:void(0)" id="map-id" class="book_btn map" title="Xem bản đồ">
+									<i class="fa fa-map-marker"></i>
+								</a>
+								<a href="javascript:void(0)" title="Xem Video" id="video-id" class="book_btn video">
+									<i class="fa fa-film "></i>
+								</a>
+							</div>
+							<script>
+								$(function () {
+									// Đặt hàng
+								    $(".form-book-830").dialog({
+								    	modal: true,
+								    	width:400,
+								    	title: "Để lại thông tin",
+								        autoOpen: false,
+										draggable: false,
+								        dialogClass: "popup-book title_color_2",
+								        hide: {
+								            effect: "scale",
+								            easing: "easeInBack"
+								        },
+								        show: {
+								            effect: "scale",
+								            easing: "easeOutBack"
+								        }
+								    });
+								    
+								    $("#book-830").click(function() {
+								        $(".form-book-830").dialog("open");
+								    });
+
+									// Bản đồ
+								    $(".form-map-830").dialog({
+								    	modal: true,
+								    	width:450,
+								    	title: "Vị trí",
+								        autoOpen: false,
+										draggable: false,
+								        dialogClass: "popup-book title_color_3",
+								        hide: {
+								            effect: "scale",
+								            easing: "easeInBack"
+								        },
+								        show: {
+								            effect: "scale",
+								            easing: "easeOutBack"
+								        }
+								    });
+								    
+								    $("#map-830").click(function() {
+								        $(".form-map-830").dialog("open");
+								     //    setTimeout(function() {
+									    //     google.maps.event.trigger(map, 'resize');
+									    // }, 200);
+			
+								    });
 
 
-					</div>
-
-				</div>
-
-				<div class="col-md-4 col-sm-4 col-xs-6 full480 mgbt30">
-
-					<div class="tt_inner">
-					    <div class="img_zoom">
-					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
-					        <div class="price_fade">
-					            <p>2.000.000 ₫</p>
-					        </div>
-					        <div class="view_wrap">
-					            <div class="view_inner">
-					                <div class="view_middle">
-					                    <a href="#" title="Hallstatt">Xem</a>
-					                </div>
-					            </div>
-					        </div>
-					    </div>
-
-					    <div class="title_wrap">
-					        <h4>Hallstatt</h4>
-					    </div>
-
-					    <div class="tour_detail flex">
-					        <div class="vitri_tour bg_color_1">
-					            <div class="white"><i class="fa fa-location-arrow"></i> Châu Âu</div>
-					        </div>
-					        <div class="loai_hinh_tour">
-					            <div class="white"><i class="fa fa-info"></i> Teambuilding</div>
-					        </div>
-					    </div>
-
-					    <div class="book_tour_wrap">
-					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit.</p>
-									<div class="book_wrap wrapper">
-										<a href="javascript:void(0)" id="book-id" class="book_btn book">Đặt ngay</a>
-										<a href="javascript:void(0)" id="map-id" class="book_btn map" title="Xem bản đồ">
-											<i class="fa fa-map-marker"></i>
-										</a>
-										<a href="javascript:void(0)" title="Xem Video" id="video-id" class="book_btn video">
-											<i class="fa fa-film "></i>
-										</a>
-									</div>
-					    </div>
+								    // Video
+								    $(".form-video-830").dialog({
+								    	modal: true,
+								    	width:500,
+								    	title: "Video",
+								        autoOpen: false,
+										draggable: false,
+								        dialogClass: "popup-book title_color_4",
+								        hide: {
+								            effect: "scale",
+								            easing: "easeInBack"
+								        },
+								        show: {
+								            effect: "scale",
+								            easing: "easeOutBack"
+								        }
+								    });
+								    $(document).trigger( "resize, scroll" );
+								    $("#video-830").click(function() {
+								        $(".form-video-830").dialog("open");
+								    });
 
 
-					</div>
-
-				</div>
-
-				<div class="col-md-4 col-sm-4 col-xs-6 full480 mgbt30">
-
-					<div class="tt_inner">
-					    <div class="img_zoom">
-					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
-					        <div class="price_fade">
-					            <p>2.000.000 ₫</p>
-					        </div>
-					        <div class="view_wrap">
-					            <div class="view_inner">
-					                <div class="view_middle">
-					                    <a href="#" title="Hallstatt">Xem</a>
-					                </div>
-					            </div>
-					        </div>
-					    </div>
-
-					    <div class="title_wrap">
-					        <h4>Hallstatt</h4>
-					    </div>
-
-					    <div class="tour_detail flex">
-					        <div class="vitri_tour bg_color_1">
-					            <div class="white"><i class="fa fa-location-arrow"></i> Châu Âu</div>
-					        </div>
-					        <div class="loai_hinh_tour">
-					            <div class="white"><i class="fa fa-info"></i> Teambuilding</div>
-					        </div>
-					    </div>
-
-					    <div class="book_tour_wrap">
-					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit.</p>
-									<div class="book_wrap wrapper">
-										<a href="javascript:void(0)" id="book-id" class="book_btn book">Đặt ngay</a>
-										<a href="javascript:void(0)" id="map-id" class="book_btn map" title="Xem bản đồ">
-											<i class="fa fa-map-marker"></i>
-										</a>
-										<a href="javascript:void(0)" title="Xem Video" id="video-id" class="book_btn video">
-											<i class="fa fa-film "></i>
-										</a>
-									</div>
-									<script>
-										$(function () {
-											// Đặt hàng
-										    $(".form-book-830").dialog({
-										    	modal: true,
-										    	width:400,
-										    	title: "Để lại thông tin",
-										        autoOpen: false,
-												draggable: false,
-										        dialogClass: "popup-book title_color_2",
-										        hide: {
-										            effect: "scale",
-										            easing: "easeInBack"
-										        },
-										        show: {
-										            effect: "scale",
-										            easing: "easeOutBack"
-										        }
-										    });
-										    
-										    $("#book-830").click(function() {
-										        $(".form-book-830").dialog("open");
-										    });
-
-											// Bản đồ
-										    $(".form-map-830").dialog({
-										    	modal: true,
-										    	width:450,
-										    	title: "Vị trí",
-										        autoOpen: false,
-												draggable: false,
-										        dialogClass: "popup-book title_color_3",
-										        hide: {
-										            effect: "scale",
-										            easing: "easeInBack"
-										        },
-										        show: {
-										            effect: "scale",
-										            easing: "easeOutBack"
-										        }
-										    });
-										    
-										    $("#map-830").click(function() {
-										        $(".form-map-830").dialog("open");
-										     //    setTimeout(function() {
-											    //     google.maps.event.trigger(map, 'resize');
-											    // }, 200);
-					
-										    });
-
-
-										    // Video
-										    $(".form-video-830").dialog({
-										    	modal: true,
-										    	width:500,
-										    	title: "Video",
-										        autoOpen: false,
-												draggable: false,
-										        dialogClass: "popup-book title_color_4",
-										        hide: {
-										            effect: "scale",
-										            easing: "easeInBack"
-										        },
-										        show: {
-										            effect: "scale",
-										            easing: "easeOutBack"
-										        }
-										    });
-										    $(document).trigger( "resize, scroll" );
-										    $("#video-830").click(function() {
-										        $(".form-video-830").dialog("open");
-										    });
-
-
-										});
-									</script>
+								});
+							</script>
 					    </div>
 
 
@@ -851,24 +1368,22 @@
 
 					<div class="custom_search">
 					    <div class="tab_book sidebar_fixed">
-					        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-								<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-								    <li class="t1 ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-39" aria-selected="true">
-								        <a href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-39">Tìm kiếm</a>
-								    </li>
-								    <li class="t2 ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-40" aria-selected="false">
-								        <a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-40">Liên hệ</a>
-								    </li>
+					        <div id="tabs">
+								<ul>
+                                    <li class="t1"><a href="#tabs-1" rel="nofollow">Tìm kiếm</a></li>
+                                    <li class="t2"><a href="#tabs-2" rel="nofollow">Liên hệ</a></li>
 								</ul>
-					            <div id="tabs-1" aria-labelledby="ui-id-39" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false">
+					            <div id="tabs-1">
 					                <div class="adv_search">
 										<form method="post" action="tim-kiem" name="">
 										    <div class="tax_select limit">
 										        <div class="tax_s tax_1">
 										            <select name="taxonomy[dd_dulich]" id="name">
 										            	<option value="">Tất cả Địa điểm du lịch</option>
-										            	<option value="chau-a">Châu Á</option><option value="chau-au">Châu Âu</option>
-										              	<option value="chau-my">Châu Mỹ</option><option value="chau-phi">Châu Phi</option>
+										            	<option value="chau-a">Châu Á</option>
+										            	<option value="chau-au">Châu Âu</option>
+										              	<option value="chau-my">Châu Mỹ</option>
+										              	<option value="chau-phi">Châu Phi</option>
 										                <option value="chau-uc">Châu Úc</option>
 										            </select>
 										        </div>
@@ -884,7 +1399,8 @@
 										        </div>
 										    </div>
 										    <div class="per_number">
-										        <select name="per_num"><option value="">Tất cả số người</option><option value="Chọn">Chọn</option>
+										        <select name="per_num"><option value="">Tất cả số người</option>
+										        	<option value="Chọn">Chọn</option>
 										          	<option value="1 Người">1 Người</option>
 										          	<option value="2 Người">2 Người</option>
 										          	<option value="4 Người">4 Người</option>
@@ -898,10 +1414,10 @@
 										    </div>
 										    <div class="date_time_picker limit">
 										        <div class="dt_picker dt_picker_1 col-md-6 pd0">
-										            <input type="text" value="" name="from_date" id="date-time-1" placeholder="Bắt đầu" class="hasDatepicker">
+										        	<input type="text" value="" name="from_date" id="date-time-1" placeholder="Bắt đầu"/>
 										        </div>
 										        <div class="dt_picker dt_picker_2 col-md-6 pd0">
-										            <input type="text" value="" name="to_date" id="date-time-2" placeholder="Kết thúc" class="hasDatepicker">
+										        	<input type="text" value="" name="to_date" id="date-time-2" placeholder="Kết thúc"/>
 										        </div>
 										        <script>
 										            jQuery(document).ready(function($) {
@@ -916,12 +1432,7 @@
 										    </div>
 										    <div class="search_prices limit">
 
-										        <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
-										            <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 6.66667%; width: 60%;"></div>
-										            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 6.66667%;"></a>
-										            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6667%;"></a>
-										        </div>
-
+										        <div id="slider-range"></div>
 										        <input type="text" id="amount" value="" name="price" style="border:0; color:#f6931f; font-weight:bold;">
 
 										        <script>
@@ -944,10 +1455,10 @@
 										</form>
 					                </div>
 					            </div>
-					            <div id="tabs-2" aria-labelledby="ui-id-40" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+					            <div id="tabs-2">
 					                <div role="form" class="wpcf7" id="wpcf7-f104-o7" lang="en-US" dir="ltr">
 					                    <div class="screen-reader-response"></div>
-										<form action="/#wpcf7-f104-o7" method="post" class="wpcf7-form" novalidate="novalidate">
+										<form action="" method="post" class="wpcf7-form" novalidate="novalidate">
 										    <div style="display: none;">
 										        <input type="hidden" name="_wpcf7" value="104">
 										        <input type="hidden" name="_wpcf7_version" value="4.7">
@@ -955,31 +1466,28 @@
 										        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f104-o7">
 										        <input type="hidden" name="_wpnonce" value="e607277b38">
 										    </div>
-										    <p class="ip">
-										        <span class="wpcf7-form-control-wrap your-name">
-										      		<input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên">
-										        </span>
-										    </p>
-										    <p class="ip">
-										        <span class="wpcf7-form-control-wrap your-email">
-										      		<input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Địa chỉ Email">
-										        </span>
-										    </p>
-										    <p class="ip">
-										        <span class="wpcf7-form-control-wrap your-subject">
-										      		<input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Tiêu đề">
-										        </span>
-										    </p>
-										    <p>
-										        <span class="wpcf7-form-control-wrap your-message">
-										          	<textarea name="your-message" cols="40" rows="4" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung liên hệ"></textarea>
-										        </span>
-										        <br>
-										        <span>
-										            <input type="submit" value="Gửi liên hệ" class="wpcf7-form-control wpcf7-submit btn">
-										          	<span></span>
-										        </span>
-										    </p>
+											<p>
+												<span class="wpcf7-form-control-wrap your-name">
+												    <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên *" />
+												</span>
+												<br />
+												<span class="wpcf7-form-control-wrap your-email">
+												    <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Địa chỉ Email *" />
+												</span>
+												<br />
+												<span class="wpcf7-form-control-wrap your-subject">
+												    <input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Tiêu đề" />
+												</span>
+												<br />
+												<span class="wpcf7-form-control-wrap your-message">
+												    <textarea name="your-message" cols="40" rows="4" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung liên hệ"></textarea>
+												</span>
+												<br />
+												<span>
+												    <input type="submit" value="Gửi liên hệ" class="wpcf7-form-control wpcf7-submit btn" />
+												<span>
+											</p>
+									
 										    <div class="wpcf7-response-output wpcf7-display-none"></div>
 										</form>
 					                </div>
@@ -1235,15 +1743,6 @@
 		</div>
 	</article>
 
-	<section class="open-source hidden">
-	    <div class="icon">
-	        <div class="radar"></div>
-	        <div class="radar"></div>
-	        <div class="radar"></div>
-	    </div>
-	    <h3 class="light">TinyMCE is open source</h3>
-	    <h4 class="light">For a decade TinyMCE has been an open source project. Licensed under LGPL,<br>everyone at TinyMCE remains as committed to its open source future as the day we started.<br>If open source matters to you too, <a href="https://github.com/tinymce/tinymce">please contribute</a>.</h4>
-	</section>
 
 	<div class="box gradient clear"></div>
 	<footer class="box">
@@ -1251,62 +1750,70 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">LOVE TRAVEL</span>
-						<div class="box col-detail-ft">
-							<div class="box-item-detail">
-								<i class="fa fa-location-arrow"></i>
-								<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
-							</div>
-							<div class="box-item-detail">
-								<i class="fa fa-phone"></i>
-								<p>0979843527</p>
-							</div>
-							<div class="box-item-detail">
-								<i class="fa fa-phone"></i>
-								<p>tuanlaph03362@gmail.com</p>
+						<div class="widget widget_info_footer">
+							<span class="box title-footer">LOVE TRAVEL</span>
+							<div class="box col-detail-ft">
+								<div class="box-item-detail">
+									<i class="fa fa-location-arrow"></i>
+									<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
+								</div>
+								<div class="box-item-detail">
+									<i class="fa fa-phone"></i>
+									<p>0979843527</p>
+								</div>
+								<div class="box-item-detail">
+									<i class="fa fa-phone"></i>
+									<p>tuanlaph03362@gmail.com</p>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">Thẻ</span>
-						<div class="box col-tag-ft">
-							<a href="#" title="Title" class="item-tag">coffee</a>
-							<a href="#" title="Title" class="item-tag">World</a>
-							<a href="#" title="Title" class="item-tag">HTML</a>
-							<a href="#" title="Title" class="item-tag">PHP</a>
+						<div class="widget widget_tag_footer">
+							<span class="box title-footer">Thẻ</span>
+							<div class="box col-tag-ft">
+								<a href="#" title="Title" class="item-tag">coffee</a>
+								<a href="#" title="Title" class="item-tag">World</a>
+								<a href="#" title="Title" class="item-tag">HTML</a>
+								<a href="#" title="Title" class="item-tag">PHP</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">Album Ảnh</span>
-						<div class="box col-album-ft">
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
+						<div class="widget widget_album_footer">
+							<span class="box title-footer">Album Ảnh</span>
+							<div class="box col-album-ft">
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">LIÊN HỆ</span>
-						<div class="box col-form-ft">
-							<form action="" method="" class="">
-								<input type="text" name="email" class="" value="" placeholder="Email">
-								<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
-								<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
-							</form>
+						<div class="widget widget_contact_footer">
+							<span class="box title-footer">LIÊN HỆ</span>
+							<div class="box col-form-ft">
+								<form action="" method="" class="">
+									<input type="text" name="email" class="" value="" placeholder="Email">
+									<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
+									<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -1332,68 +1839,26 @@
 		</div>
 	</footer>
 
-	<style type="text/css">
-		@keyframes radar {
-		  0% {
-		    width: 150px;
-		    height: 150px;
-		    border: 40px solid #fff;
-		    opacity: 0;
-		  }
+	<div id="goTop" >
+		<div class="go_top" title="Lên trên">
+			<i class="fa fa-arrow-up" aria-hidden="true"></i>
+		</div>
+	</div>
 
-		  50% {
-		    opacity: .1;
-		  }
 
-		  90% {
-		    width: 750px;
-		    height: 750px;
-		    border: 2px solid #fff;
-		    opacity: 0;
-		  }
-
-		  to {
-		    width: 1500px;
-		    height: 1500px;
-		    border: 2px solid #fff;
-		    opacity: 0;
-		  }
-		}
-
-		.open-source {
-		    overflow: hidden;
-		    transform: translate3d(0,0,0);
-		    background-image: linear-gradient(to bottom,#2276d2,#1c5fa8);
-		    padding: 45px 25px 50px;
-		    display: block;
-		}
-		.open-source .icon {
-			  position: relative;
-			  width: 85px;
-			  background-image: url();
-			}
-
-			.open-source .radar {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  border-radius: 50%;
-			  border: 10px solid #fff;
-			  width: 150px;
-			  height: 150px;
-			  transform: translate(-50%,-50%);
-			  animation: radar 2s infinite;
-			  opacity: 0;
-			}
-
-			.open-source .radar:nth-child(2) {
-			  animation-delay: .2s;
-			}
-
-			.open-source .radar:nth-child(3) {
-			  animation-delay: .5s;
-			}
-	</style>
+	<script>
+		waitJquery(function(){
+			jQuery(window).scroll(function() {
+				var top=parseInt(jQuery(window).scrollTop())+parseInt('');
+				jQuery('.ads-left-body, .ads-right-body').animate({
+					'top':top
+				},{
+					duration: 300,
+					queue: false,
+				})
+			});
+		});
+	</script>
 
 	<link href="theme/frontend/css/jquery-ui.min.css" rel="stylesheet" media="screen">
 	<script src="theme/frontend/js/jquery-ui.min.js" defer></script>
@@ -1426,16 +1891,17 @@
 	</script>
 
 
-  <script type="text/javascript" src="theme/frontend/js/wow.js" defer></script>
-  <script type="text/javascript" src="theme/frontend/js/jquery.easing.1.3.js" defer></script>
-  <script type="text/javascript" src="theme/frontend/js/camera.min.js" defer></script>
+	<script type="text/javascript" src="theme/frontend/js/wow.js" defer></script>
+	<script type="text/javascript" src="theme/frontend/js/jquery.easing.1.3.js" defer></script>
+	<script type="text/javascript" src="theme/frontend/js/camera.min.js" defer></script>
 
-  <script type="text/javascript" src="theme/frontend/js/owl.carousel.js" defer></script>
-  <script type="text/javascript" src="theme/frontend/js/owl.carousel.min.js" defer></script>
+	<script type="text/javascript" src="theme/frontend/js/owl.carousel.js" defer></script>
+	<script type="text/javascript" src="theme/frontend/js/owl.carousel.min.js" defer></script>
 
-  <script type="text/javascript" src="theme/frontend/js/script.js" defer></script>
-  <script type="text/javascript" src="theme/frontend/plug/script.js" defer></script>
+	<script type="text/javascript" src="theme/frontend/js/script.js" defer></script>
+	<script type="text/javascript" src="theme/frontend/plug/script.js" defer></script>
 
-  <script type="text/javascript" src="theme/frontend/js/jquery.sticky.js" defer></script>
+	<script type="text/javascript" src="theme/frontend/js/jquery.sticky.js" defer></script>
+
 </body>
 </html>

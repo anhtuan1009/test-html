@@ -525,6 +525,7 @@ p {
     background: linear-gradient(to right, #f76570 0%, #f76570 8%, #f3a46b 8%, #f3a46b 16%, #f3a46b 16%, #ffd205 16%, #ffd205 24%, #ffd205 24%, #1bbc9b 24%, #1bbc9b 25%, #1bbc9b 32%, #14b9d5 32%, #14b9d5 40%, #c377e4 40%, #c377e4 48%, #f76570 48%, #f76570 56%, #f3a46b 56%, #f3a46b 64%, #ffd205 64%, #ffd205 72%, #1bbc9b 72%, #1bbc9b 80%, #14b9d5 80%, #14b9d5 80%, #14b9d5 89%, #c377e4 89%, #c377e4 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f76570', endColorstr='#c377e4', GradientType=1);
 }
+.menu-collapse {display: none; }
 header {
 	@include style-public;
 	.header-top {
@@ -560,7 +561,7 @@ header {
   		@include style-public;
   		clear: both;
   		width: 100%;
-  		height: 70px;
+  		height: auto;
     	background: #fff;
     	nav.box-menu-top {
 		    width: 100%;
@@ -964,7 +965,7 @@ header {
   line-height: 45px;
 }
 
-.counter_wrapper .col-3 {
+.counter_wrapper .col-md-6 {
   margin: 0px;
 }
 
@@ -1029,7 +1030,7 @@ header {
   height: 45px;
   color: #a4a4a4;
   background-color: #4a515b;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
   position: relative;
   overflow: hidden;
 }
@@ -1050,7 +1051,7 @@ header {
   height: 45px;
   color: #a4a4a4;
   background-color: #4a515b;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
   border: none;
   box-shadow: none;
   outline: none;
@@ -1238,7 +1239,7 @@ body .ui-tabs.ui-widget-content {
   box-sizing: border-box;
   text-transform: uppercase;
   color: #fff;
-  font-family: "Open Sans",sans-serif;
+  font-family: "Arial" !important;
 }
 
 
@@ -1261,23 +1262,12 @@ body .ui-tabs.ui-widget-content {
   height: 45px;
   color: #a4a4a4;
   background-color: #4a515b;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
   outline: none;
   box-shadow: none;
   border: 0;
 }
 
-.slide_search .key_word {
-  padding-right: 20px;
-}
-
-.slide_search .search_prices {
-  padding: 0px 20px;
-}
-
-.slide_search .a_search .tax_select, .slide_search .a_search .tax_select .tax_1, .slide_search .a_search .per_date {
-  padding-right: 20px;
-}
 
 .slide_search .tab_book .ui-tabs .ui-tabs-nav li.a_tab {
   background-color: #18b292;
@@ -1290,8 +1280,19 @@ body .ui-tabs.ui-widget-content {
 .slide_search .tab_book .ui-tabs .ui-tabs-nav li.q_tab.ui-state-active, .slide_search .tab_book .ui-tabs .ui-tabs-nav li.a_tab.ui-state-active {
   background-color: #434a54;
 }
-body #slider-range, body #slider-range1, body #slider-range2, body #slider-range1 {
+body #slider-range{
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #4a515b !important;
+  height: 5px;
+  position: relative;
+  text-align: left;
+  float: left;
+  padding: 0px;
+}
+
+body #slider-range1, body #slider-range2 {
   margin-top: 20px;
   margin-bottom: 10px;
   background-color: #4a515b !important;
@@ -1344,39 +1345,39 @@ body #slider-range .ui-state-default, body #slider-range1 .ui-state-default {
   border: none;
 }
 
-body .q_search .search_prices #slider-range1.col-6 {
+body .q_search .search_prices #slider-range1.col-md-6 {
   margin-top: 30px;
   width: 46%;
 }
 
-body .a_search .search_prices #slider-range2.col-6 {
+body .a_search .search_prices #slider-range2.col-md-6 {
   margin-top: 30px;
   width: 46%;
 }
 
-body .a_search .search_prices #slider-range2.col-6 {
+body .a_search .search_prices #slider-range2.col-md-6 {
   width: 46%;
 }
 
-body .a_search .search_prices #amount2.col-6 {
+body .a_search .search_prices #amount2.col-md-6 {
   float: right;
   width: 50%;
 }
 
-body .q_search #slider-range1.col-6 .ui-state-default, body .q_search #slider-range1.col-6 .ui-slider-range {
+body .q_search #slider-range1.col-md-6 .ui-state-default, body .q_search #slider-range1.col-md-6 .ui-slider-range {
   background-color: #18b292;
 }
 
-body .a_search #slider-range1.col-6 .ui-state-default, body .a_search #slider-range1.col-6 .ui-slider-range {
+body .a_search #slider-range1.col-md-6 .ui-state-default, body .a_search #slider-range1.col-md-6 .ui-slider-range {
   background-color: #14B9D5;
 }
 
-.q_search .search_prices input.col-6 {
+.q_search .search_prices input.col-md-6 {
   width: 50%;
   float: right;
 }
 
-.a_search input#s.col-3 {
+.a_search input#s.col-md-6 {
   width: 25%;
   background-color: #14B9D5;
 }
@@ -1385,6 +1386,10 @@ body .a_search #slider-range1.col-6 .ui-state-default, body .a_search #slider-ra
   background-color: #1bbc9b;
   color: #fff;
   text-transform: uppercase;
+}
+.a_search input#s.timkiem1 {
+    width: 100%;
+    background-color: #14B9D5;
 }
 
 .a_search input#s:hover, .q_search input#s:hover {
@@ -1421,7 +1426,7 @@ body .a_search #slider-range1.col-6 .ui-state-default, body .a_search #slider-ra
   height: 45px;
   color: #a4a4a4 !important;
   background-color: #4a515b;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
 }
 
 .adv_search #s {
@@ -1439,7 +1444,7 @@ body .a_search #slider-range1.col-6 .ui-state-default, body .a_search #slider-ra
   margin: 10px 0px;
   background-color: #ffd205;
   text-transform: uppercase;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
 }
 
 .tab_book .wpcf7-form-control {
@@ -1452,7 +1457,7 @@ body .a_search #slider-range1.col-6 .ui-state-default, body .a_search #slider-ra
   font-size: 15px;
   background-color: #4a515b;
   border: 0px solid #f1f1f1;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
 }
 
 .tab_book .wpcf7-form-control.wpcf7-submit {
@@ -1469,7 +1474,7 @@ body .a_search #slider-range1.col-6 .ui-state-default, body .a_search #slider-ra
   text-align: center;
   margin: 10px 0px;
   background-color: #1bbc9b;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
 }
 
 .tab_book .wpcf7-form-control-wrap {
@@ -1529,7 +1534,7 @@ body .ui-datepicker .ui-datepicker-title {
   line-height: 17px;
   color: #fff;
   text-transform: uppercase;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
 }
 
 body .ui-datepicker-calendar {
@@ -1569,7 +1574,7 @@ body .ui-datepicker-calendar td a.ui-state-default {
   text-align: center;
   background: #fff;
   border: 0;
-  font-family: "Open Sans" !important;
+  font-family: "Arial" !important;
 }
 
 body .ui-datepicker-calendar td a.ui-state-default:hover {
@@ -1586,7 +1591,7 @@ body .ui-datepicker-calendar td a.ui-state-highlight {
 
 body .ui-datepicker .ui-datepicker-prev, body .ui-datepicker .ui-datepicker-next {
   border: 1px solid #999;
-  background: #dadada url(images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x;
+  background: #dadada;
   font-weight: normal;
   color: #212121;
 }
@@ -1647,7 +1652,7 @@ body .ui-dialog .ui-dialog-title {
   text-transform: uppercase;
   font-weight: 400;
   color: #fff;
-  font-family: Open Sans;
+  font-family: Arial;
 }
 
 body .ui-dialog .ui-dialog-titlebar-close {
@@ -1748,7 +1753,7 @@ body .ui-state-default .ui-icon {
 }
 .box.toursl_box_img p {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     top: 10px;
     left: -30px;
     text-align: center;
@@ -1900,7 +1905,7 @@ body .ui-state-default .ui-icon {
   text-align: center;
   border: 1px solid #f1f1f1;
   cursor: pointer;
-  font-family: "Open Sans";
+  font-family: "Arial";
 }
 
 .tour_icon a i {
@@ -1996,6 +2001,8 @@ footer {
                 width: 100%;
                 clear: both;
                 display: inline-block;
+                border-bottom: 1px solid #4a515b;
+                padding-bottom: 5px;
                 .fa {
                     float: left;
                     color: #fff;
@@ -2526,6 +2533,7 @@ footer {
 .box-form-search-aside {
   padding: 10px 20px;
   background: #fff;
+  border: 1px solid #f1f1f1;
 }
 .frm-input {
   position: relative;
@@ -2619,28 +2627,78 @@ footer {
 
 @media (min-width: 768px) and (max-width: 1199px){
 }
-@media all and (max-width: 991px) {	
+@media all and (max-width: 991px) {
+    #menu-primary {
+        display: none;
+        width: 100%;
+        padding: 10px 0;
+        border: 1px solid #f3a46b;
+        position: relative;
+        overflow: hidden;
+    }
+    .menu-collapse {
+        display: block;
+        position: relative;
+        font-size: 15px;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: transparent;
+        border: 1px solid #f1f1f1;
+        border-radius: 0px;
+        color: #5e6d81;
+        text-transform: uppercase;
+    }
+    .menu-collapse::after {
+        content: "\f078";
+        font-family: "fontawesome";
+        font-size: 12px;
+        float: right;
+        line-height: 20px;
+    }
+    header .header nav.box-menu-top .list-menu-1 .item-menu-1 {
+        width: 100%;
+        line-height: 30px;
+    }
+    header .header nav.box-menu-top .list-menu-2 {
+        display: block;
+        width: 100%;
+        position: relative;
+        opacity: 1;
+        background: transparent;
+    }
+    header .header nav.box-menu-top .list-menu-2 .item-menu-2 {
+        height: 30px;
+        line-height: 30px;
+    }
+    header .header nav.box-menu-top .list-menu-1 .item-menu-1:hover .list-menu-2 {
+        width: 100%;
+        background: transparent;
+    }
+    header .header nav.box-menu-top .list-menu-2 .item-menu-2 a.link-menu-2 {
+        line-height: 30px;
+        color: #888;
+    }
 
-  .vitri_tour,  .loai_hinh_tour {
-    width: 100%;
-  }
-  .sales_tour_box { height: auto;}
-  .toursl_box_img {
-    height: 180px;
-  }
-  .box-out {
-    position: relative;
-    display: block;
-    height: 120px;
-    clear: both;
-    padding: 10px;
-  }
-  .fill-height { height: auto !important;}
-  .slide_search .key_word, .date_time_picker, .search_prices, .q_search .col-2, .tax_select, .per_date, .per_number, .a_search input#s.col-3, .tax_s {
-    float: left;
-    width: 100%;
-    padding: 0 !important;
-  }
+    .vitri_tour,  .loai_hinh_tour {
+        width: 100%;
+    }
+    .sales_tour_box { height: auto;}
+    .toursl_box_img {
+        height: 180px;
+    }
+    .box-out {
+        position: relative;
+        display: block;
+        height: 120px;
+        clear: both;
+        padding: 10px;
+    }
+    .fill-height { height: auto !important;}
+    .slide_search .key_word, .date_time_picker, .search_prices, .q_search .col-md-2, .tax_select, .per_date, .per_number, .a_search input#s.col-md-6, .tax_s {
+        float: left;
+        width: 100%;
+        padding: 0 !important;
+    }
 
 }
 @media all and (max-width: 767px) {
@@ -2650,7 +2708,7 @@ footer {
     font-size: 13px;
   }
   .search_prices input {
-    font-family: "Open Sans", sans-serif !important;
+    font-family: "Arial", sans-serif !important;
     font-size: 12px !important;
     padding: 10px;
   }
@@ -2669,7 +2727,7 @@ footer {
     font-size: 10px;
   }
   .search_prices input {
-    font-family: "Open Sans", sans-serif !important;
+    font-family: "Arial", sans-serif !important;
     font-size: 11px !important;
     padding: 10px;
   }

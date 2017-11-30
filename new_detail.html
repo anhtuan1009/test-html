@@ -54,6 +54,7 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 
+
 	<header class="clear">
 		<div class="box header-top clear hidden-sm hidden-xs">
 			<div class="container">
@@ -97,7 +98,8 @@
 					</div>
 					<div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
 						<div class="row">
-							<nav class="box-menu-top">
+							<div class="menu-collapse">Menu</div>
+							<nav class="box-menu-top" id="menu-primary">
 								<div class="list-menu-1">
 
 									<div class="item-menu-1">
@@ -150,6 +152,81 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+		    waitJquery(function(){
+		        // var stickyNavTop = $('.full-menubar').offset().top;
+		 
+		        // var stickyNav = function(){
+		        // var scrollTop = $(window).scrollTop();
+		              
+		        // if (scrollTop > stickyNavTop) { 
+		        //         $('.full-menubar').addClass('sticky');
+		        //     } else {
+		        //         $('.full-menubar').removeClass('sticky'); 
+		        //     }
+		        // };
+		         
+		        // stickyNav();
+		        //     $(window).scroll(function() {
+		        //       stickyNav();
+		        // });
+
+		        jQuery(".menu-collapse").click(function(){jQuery("#menu-primary").slideToggle('fast')});
+
+		                    // sidebar OPEN        
+		        jQuery('.sidebar_open').click(function(event){
+		            event.preventDefault();
+		            $('.right_sidebar').css({
+		                'right': '0px',
+		            });
+		            $('#full-container').css({
+		                'margin-left': '-300px',
+		            });
+		            $('.overlay').addClass('overlay_on');
+		        });
+		        // sidebar CLOSE   
+		        $('.sidebar_btn_close, .overlay').click(function(event){
+		            event.preventDefault();
+		            $('.right_sidebar').css({
+		                'right': '-300px'
+		            });
+		            $('#full-container').css({
+		                'margin-left': '0px'
+		            });
+		            $('.overlay').removeClass('overlay_on');
+		        });
+
+
+		    });
+		    // Dropdown menu
+
+		    waitJquery(function(){
+
+		        if( $(window).width() < 991 ){
+		            var obj = jQuery('#menu-primary li:has(ul)');
+		            obj.prepend('<span class="submenu-button fa fa-angle-right"></span>');
+		            
+		            jQuery('.submenu-button').click(function(e){  
+		                e.preventDefault();
+		                  if (jQuery(this).parent().children('ul.sub-menu').is(':visible')) {
+		                       jQuery(this).parent().children('ul.sub-menu').slideUp('fast');
+		                  } else {
+		                       jQuery(this).parent().children('ul.sub-menu').slideDown('fast');
+		                  }
+		        
+		                var $this = jQuery(this);
+		                $this.toggleClass('fa-angle-right');
+		                if($this.hasClass('fa-angle-right')){
+		                    $this.removeClass('fa-angle-down').addClass('fa-angle-right');         
+		                } else {
+		                    $this.removeClass('fa-angle-right').addClass('fa-angle-down');
+		                }
+		            });
+		        }
+
+		    });
+		</script>
 	</header><!-- End header -->
 
 
@@ -157,8 +234,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="mg0 pdt30 pdbt10">Thiếu nhân lực IT, Bộ GDĐT áp dụng cơ chế đặc biệt, cho phép sinh viên ngành khác có thể chuyển sang học CNTT</h2>
-					<div class="small_line mgt10 mgbt30"><span></span></div>
+					<div class="box box_title_banner">
+						<h2 class="mg0 pdt30 pdbt10">TIN TỨC</h2>
+						<div class="small_line mgt10 mgbt30"><span></span></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -223,7 +302,7 @@
 						<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="3"></div>
 					</div>
 
-					<section class="box box-related">
+					<!-- <section class="box box-related hidden">
 						<h4 class="title-relate mg0 mgbt10">Tin liên quan</h4>
 						<span class="underlined"></span>
 
@@ -232,30 +311,34 @@
 							<div class="item-related"><a href="#" title="Title" class="link-related">Paris</a></div>
 							<div class="item-related"><a href="#" title="Title" class="link-related">MELBOUNRE</a></div>
 						</div>
-					</section>
+					</section> -->
 
 				</div>
 				<div class="col-sm-4 col-xs-12">
-					<aside class="box box-aside">
-						<div class="box box-title-aside clear">
-							<span class="title-aside">Tìm kiếm</span>
-						</div>
-						<div class="box box-form-search-aside clear">
-							<form action="" method="post" class="">
-								<input type="text" name="keysearch" value="" class="frm-input">
-								<button type="submit" name="tim" class="btn btn-search">Tìm kiếm</button>
-							</form>
+					<aside class="box box-aside scrool sticky sidebar">
+						<div class="box widget widget_search_sidebar">
+							<div class="box box-title-aside clear">
+								<span class="title-aside">Tìm kiếm</span>
+							</div>
+							<div class="box box-form-search-aside clear">
+								<form action="" method="post" class="">
+									<input type="text" name="keysearch" value="" class="frm-input">
+									<button type="submit" name="tim" class="btn btn-search">Tìm kiếm</button>
+								</form>
+							</div>
 						</div>
 						<div class="space space20"></div>
-						<div class="box box-title-aside">
-							<span class="title-aside">Các tin khác</span>
-						</div>
-						<div class="box box-post-other clear">
-							<a href="#" title="Title" class="link-post-other">Tin bài viết 1</a>
-							<a href="#" title="Title" class="link-post-other">Tin bài viết 2</a>
-							<a href="#" title="Title" class="link-post-other">Tin bài viết 3</a>
-							<a href="#" title="Title" class="link-post-other">Tin bài viết 4</a>
-							<a href="#" title="Title" class="link-post-other">Tin bài viết 5</a>
+						<div class="box widget widget_search_sidebar">
+							<div class="box box-title-aside">
+								<span class="title-aside">Các tin khác</span>
+							</div>
+							<div class="box box-post-other clear">
+								<a href="#" title="Title" class="link-post-other">Tin bài viết 1</a>
+								<a href="#" title="Title" class="link-post-other">Tin bài viết 2</a>
+								<a href="#" title="Title" class="link-post-other">Tin bài viết 3</a>
+								<a href="#" title="Title" class="link-post-other">Tin bài viết 4</a>
+								<a href="#" title="Title" class="link-post-other">Tin bài viết 5</a>
+							</div>
 						</div>
 					</aside>
 				</div>
@@ -403,62 +486,70 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">LOVE TRAVEL</span>
-						<div class="box col-detail-ft">
-							<div class="box-item-detail">
-								<i class="fa fa-location-arrow"></i>
-								<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
-							</div>
-							<div class="box-item-detail">
-								<i class="fa fa-phone"></i>
-								<p>0979843527</p>
-							</div>
-							<div class="box-item-detail">
-								<i class="fa fa-phone"></i>
-								<p>tuanlaph03362@gmail.com</p>
+						<div class="widget widget_info_footer">
+							<span class="box title-footer">LOVE TRAVEL</span>
+							<div class="box col-detail-ft">
+								<div class="box-item-detail">
+									<i class="fa fa-location-arrow"></i>
+									<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
+								</div>
+								<div class="box-item-detail">
+									<i class="fa fa-phone"></i>
+									<p>0979843527</p>
+								</div>
+								<div class="box-item-detail">
+									<i class="fa fa-phone"></i>
+									<p>tuanlaph03362@gmail.com</p>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">Thẻ</span>
-						<div class="box col-tag-ft">
-							<a href="#" title="Title" class="item-tag">coffee</a>
-							<a href="#" title="Title" class="item-tag">World</a>
-							<a href="#" title="Title" class="item-tag">HTML</a>
-							<a href="#" title="Title" class="item-tag">PHP</a>
+						<div class="widget widget_tag_footer">
+							<span class="box title-footer">Thẻ</span>
+							<div class="box col-tag-ft">
+								<a href="#" title="Title" class="item-tag">coffee</a>
+								<a href="#" title="Title" class="item-tag">World</a>
+								<a href="#" title="Title" class="item-tag">HTML</a>
+								<a href="#" title="Title" class="item-tag">PHP</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">Album Ảnh</span>
-						<div class="box col-album-ft">
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
+						<div class="widget widget_album_footer">
+							<span class="box title-footer">Album Ảnh</span>
+							<div class="box col-album-ft">
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">LIÊN HỆ</span>
-						<div class="box col-form-ft">
-							<form action="" method="" class="">
-								<input type="text" name="email" class="" value="" placeholder="Email">
-								<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
-								<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
-							</form>
+						<div class="widget widget_contact_footer">
+							<span class="box title-footer">LIÊN HỆ</span>
+							<div class="box col-form-ft">
+								<form action="" method="" class="">
+									<input type="text" name="email" class="" value="" placeholder="Email">
+									<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
+									<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -484,68 +575,11 @@
 		</div>
 	</footer>
 
-	<style type="text/css">
-		@keyframes radar {
-		  0% {
-		    width: 150px;
-		    height: 150px;
-		    border: 40px solid #fff;
-		    opacity: 0;
-		  }
-
-		  50% {
-		    opacity: .1;
-		  }
-
-		  90% {
-		    width: 750px;
-		    height: 750px;
-		    border: 2px solid #fff;
-		    opacity: 0;
-		  }
-
-		  to {
-		    width: 1500px;
-		    height: 1500px;
-		    border: 2px solid #fff;
-		    opacity: 0;
-		  }
-		}
-
-		.open-source {
-		    overflow: hidden;
-		    transform: translate3d(0,0,0);
-		    background-image: linear-gradient(to bottom,#2276d2,#1c5fa8);
-		    padding: 45px 25px 50px;
-		    display: block;
-		}
-		.open-source .icon {
-			  position: relative;
-			  width: 85px;
-			  background-image: url();
-			}
-
-			.open-source .radar {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  border-radius: 50%;
-			  border: 10px solid #fff;
-			  width: 150px;
-			  height: 150px;
-			  transform: translate(-50%,-50%);
-			  animation: radar 2s infinite;
-			  opacity: 0;
-			}
-
-			.open-source .radar:nth-child(2) {
-			  animation-delay: .2s;
-			}
-
-			.open-source .radar:nth-child(3) {
-			  animation-delay: .5s;
-			}
-	</style>
+	<div id="goTop" >
+		<div class="go_top" title="Lên trên">
+			<i class="fa fa-arrow-up" aria-hidden="true"></i>
+		</div>
+	</div>
 
 	<link href="theme/frontend/css/jquery-ui.min.css" rel="stylesheet" media="screen">
 	<script src="theme/frontend/js/jquery-ui.min.js" defer></script>

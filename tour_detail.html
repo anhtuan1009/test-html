@@ -97,7 +97,8 @@
 					</div>
 					<div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
 						<div class="row">
-							<nav class="box-menu-top">
+							<div class="menu-collapse">Menu</div>
+							<nav class="box-menu-top" id="menu-primary">
 								<div class="list-menu-1">
 
 									<div class="item-menu-1">
@@ -150,6 +151,81 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+		    waitJquery(function(){
+		        // var stickyNavTop = $('.full-menubar').offset().top;
+		 
+		        // var stickyNav = function(){
+		        // var scrollTop = $(window).scrollTop();
+		              
+		        // if (scrollTop > stickyNavTop) { 
+		        //         $('.full-menubar').addClass('sticky');
+		        //     } else {
+		        //         $('.full-menubar').removeClass('sticky'); 
+		        //     }
+		        // };
+		         
+		        // stickyNav();
+		        //     $(window).scroll(function() {
+		        //       stickyNav();
+		        // });
+
+		        jQuery(".menu-collapse").click(function(){jQuery("#menu-primary").slideToggle('fast')});
+
+		                    // sidebar OPEN        
+		        jQuery('.sidebar_open').click(function(event){
+		            event.preventDefault();
+		            $('.right_sidebar').css({
+		                'right': '0px',
+		            });
+		            $('#full-container').css({
+		                'margin-left': '-300px',
+		            });
+		            $('.overlay').addClass('overlay_on');
+		        });
+		        // sidebar CLOSE   
+		        $('.sidebar_btn_close, .overlay').click(function(event){
+		            event.preventDefault();
+		            $('.right_sidebar').css({
+		                'right': '-300px'
+		            });
+		            $('#full-container').css({
+		                'margin-left': '0px'
+		            });
+		            $('.overlay').removeClass('overlay_on');
+		        });
+
+
+		    });
+		    // Dropdown menu
+
+		    waitJquery(function(){
+
+		        if( $(window).width() < 991 ){
+		            var obj = jQuery('#menu-primary li:has(ul)');
+		            obj.prepend('<span class="submenu-button fa fa-angle-right"></span>');
+		            
+		            jQuery('.submenu-button').click(function(e){  
+		                e.preventDefault();
+		                  if (jQuery(this).parent().children('ul.sub-menu').is(':visible')) {
+		                       jQuery(this).parent().children('ul.sub-menu').slideUp('fast');
+		                  } else {
+		                       jQuery(this).parent().children('ul.sub-menu').slideDown('fast');
+		                  }
+		        
+		                var $this = jQuery(this);
+		                $this.toggleClass('fa-angle-right');
+		                if($this.hasClass('fa-angle-right')){
+		                    $this.removeClass('fa-angle-down').addClass('fa-angle-right');         
+		                } else {
+		                    $this.removeClass('fa-angle-right').addClass('fa-angle-down');
+		                }
+		            });
+		        }
+
+		    });
+		</script>
 	</header><!-- End header -->
 
 
@@ -157,8 +233,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="mg0 pdt30 pdbt10">Tiêu đề</h2>
-					<div class="small_line mgt10 mgbt30"><span></span></div>
+					<div class="box box_title_banner">
+						<h2 class="mg0 pdt30 pdbt10">Tiêu đề</h2>
+						<div class="small_line mgt10 mgbt30"><span></span></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -221,27 +299,26 @@
                                 <p>Nhanh tay đặt tour cho kỉ nghỉ</p>
                             </div>
                         </div>
+                        
 
 						<div class="custom_search">
 						    <div class="tab_book sidebar_fixed">
-						        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-									<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-									    <li class="t1 ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-39" aria-selected="true">
-									        <a href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-39">Tìm kiếm</a>
-									    </li>
-									    <li class="t2 ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-40" aria-selected="false">
-									        <a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-40">Liên hệ</a>
-									    </li>
+						        <div id="tabs">
+									<ul>
+	                                    <li class="t1"><a href="#tabs-1" rel="nofollow">Tìm kiếm</a></li>
+	                                    <li class="t2"><a href="#tabs-2" rel="nofollow">Liên hệ</a></li>
 									</ul>
-						            <div id="tabs-1" aria-labelledby="ui-id-39" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false">
+						            <div id="tabs-1">
 						                <div class="adv_search">
 											<form method="post" action="tim-kiem" name="">
 											    <div class="tax_select limit">
 											        <div class="tax_s tax_1">
 											            <select name="taxonomy[dd_dulich]" id="name">
 											            	<option value="">Tất cả Địa điểm du lịch</option>
-											            	<option value="chau-a">Châu Á</option><option value="chau-au">Châu Âu</option>
-											              	<option value="chau-my">Châu Mỹ</option><option value="chau-phi">Châu Phi</option>
+											            	<option value="chau-a">Châu Á</option>
+											            	<option value="chau-au">Châu Âu</option>
+											              	<option value="chau-my">Châu Mỹ</option>
+											              	<option value="chau-phi">Châu Phi</option>
 											                <option value="chau-uc">Châu Úc</option>
 											            </select>
 											        </div>
@@ -257,7 +334,8 @@
 											        </div>
 											    </div>
 											    <div class="per_number">
-											        <select name="per_num"><option value="">Tất cả số người</option><option value="Chọn">Chọn</option>
+											        <select name="per_num"><option value="">Tất cả số người</option>
+											        	<option value="Chọn">Chọn</option>
 											          	<option value="1 Người">1 Người</option>
 											          	<option value="2 Người">2 Người</option>
 											          	<option value="4 Người">4 Người</option>
@@ -271,10 +349,10 @@
 											    </div>
 											    <div class="date_time_picker limit">
 											        <div class="dt_picker dt_picker_1 col-md-6 pd0">
-											            <input type="text" value="" name="from_date" id="date-time-1" placeholder="Bắt đầu" class="hasDatepicker">
+											        	<input type="text" value="" name="from_date" id="date-time-1" placeholder="Bắt đầu"/>
 											        </div>
 											        <div class="dt_picker dt_picker_2 col-md-6 pd0">
-											            <input type="text" value="" name="to_date" id="date-time-2" placeholder="Kết thúc" class="hasDatepicker">
+											        	<input type="text" value="" name="to_date" id="date-time-2" placeholder="Kết thúc"/>
 											        </div>
 											        <script>
 											            jQuery(document).ready(function($) {
@@ -289,12 +367,7 @@
 											    </div>
 											    <div class="search_prices limit">
 
-											        <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
-											            <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 6.66667%; width: 60%;"></div>
-											            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 6.66667%;"></a>
-											            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6667%;"></a>
-											        </div>
-
+											        <div id="slider-range"></div>
 											        <input type="text" id="amount" value="" name="price" style="border:0; color:#f6931f; font-weight:bold;">
 
 											        <script>
@@ -317,10 +390,10 @@
 											</form>
 						                </div>
 						            </div>
-						            <div id="tabs-2" aria-labelledby="ui-id-40" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+						            <div id="tabs-2">
 						                <div role="form" class="wpcf7" id="wpcf7-f104-o7" lang="en-US" dir="ltr">
 						                    <div class="screen-reader-response"></div>
-											<form action="/#wpcf7-f104-o7" method="post" class="wpcf7-form" novalidate="novalidate">
+											<form action="" method="post" class="wpcf7-form" novalidate="novalidate">
 											    <div style="display: none;">
 											        <input type="hidden" name="_wpcf7" value="104">
 											        <input type="hidden" name="_wpcf7_version" value="4.7">
@@ -328,31 +401,28 @@
 											        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f104-o7">
 											        <input type="hidden" name="_wpnonce" value="e607277b38">
 											    </div>
-											    <p class="ip">
-											        <span class="wpcf7-form-control-wrap your-name">
-											      		<input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên">
-											        </span>
-											    </p>
-											    <p class="ip">
-											        <span class="wpcf7-form-control-wrap your-email">
-											      		<input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Địa chỉ Email">
-											        </span>
-											    </p>
-											    <p class="ip">
-											        <span class="wpcf7-form-control-wrap your-subject">
-											      		<input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Tiêu đề">
-											        </span>
-											    </p>
-											    <p>
-											        <span class="wpcf7-form-control-wrap your-message">
-											          	<textarea name="your-message" cols="40" rows="4" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung liên hệ"></textarea>
-											        </span>
-											        <br>
-											        <span>
-											            <input type="submit" value="Gửi liên hệ" class="wpcf7-form-control wpcf7-submit btn">
-											          	<span></span>
-											        </span>
-											    </p>
+												<p>
+													<span class="wpcf7-form-control-wrap your-name">
+													    <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên *" />
+													</span>
+													<br />
+													<span class="wpcf7-form-control-wrap your-email">
+													    <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Địa chỉ Email *" />
+													</span>
+													<br />
+													<span class="wpcf7-form-control-wrap your-subject">
+													    <input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Tiêu đề" />
+													</span>
+													<br />
+													<span class="wpcf7-form-control-wrap your-message">
+													    <textarea name="your-message" cols="40" rows="4" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung liên hệ"></textarea>
+													</span>
+													<br />
+													<span>
+													    <input type="submit" value="Gửi liên hệ" class="wpcf7-form-control wpcf7-submit btn" />
+													<span>
+												</p>
+										
 											    <div class="wpcf7-response-output wpcf7-display-none"></div>
 											</form>
 						                </div>
@@ -623,62 +693,70 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">LOVE TRAVEL</span>
-						<div class="box col-detail-ft">
-							<div class="box-item-detail">
-								<i class="fa fa-location-arrow"></i>
-								<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
-							</div>
-							<div class="box-item-detail">
-								<i class="fa fa-phone"></i>
-								<p>0979843527</p>
-							</div>
-							<div class="box-item-detail">
-								<i class="fa fa-phone"></i>
-								<p>tuanlaph03362@gmail.com</p>
+						<div class="widget widget_info_footer">
+							<span class="box title-footer">LOVE TRAVEL</span>
+							<div class="box col-detail-ft">
+								<div class="box-item-detail">
+									<i class="fa fa-location-arrow"></i>
+									<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
+								</div>
+								<div class="box-item-detail">
+									<i class="fa fa-phone"></i>
+									<p>0979843527</p>
+								</div>
+								<div class="box-item-detail">
+									<i class="fa fa-phone"></i>
+									<p>tuanlaph03362@gmail.com</p>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">Thẻ</span>
-						<div class="box col-tag-ft">
-							<a href="#" title="Title" class="item-tag">coffee</a>
-							<a href="#" title="Title" class="item-tag">World</a>
-							<a href="#" title="Title" class="item-tag">HTML</a>
-							<a href="#" title="Title" class="item-tag">PHP</a>
+						<div class="widget widget_tag_footer">
+							<span class="box title-footer">Thẻ</span>
+							<div class="box col-tag-ft">
+								<a href="#" title="Title" class="item-tag">coffee</a>
+								<a href="#" title="Title" class="item-tag">World</a>
+								<a href="#" title="Title" class="item-tag">HTML</a>
+								<a href="#" title="Title" class="item-tag">PHP</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">Album Ảnh</span>
-						<div class="box col-album-ft">
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
+						<div class="widget widget_album_footer">
+							<span class="box title-footer">Album Ảnh</span>
+							<div class="box col-album-ft">
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">LIÊN HỆ</span>
-						<div class="box col-form-ft">
-							<form action="" method="" class="">
-								<input type="text" name="email" class="" value="" placeholder="Email">
-								<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
-								<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
-							</form>
+						<div class="widget widget_contact_footer">
+							<span class="box title-footer">LIÊN HỆ</span>
+							<div class="box col-form-ft">
+								<form action="" method="" class="">
+									<input type="text" name="email" class="" value="" placeholder="Email">
+									<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
+									<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -704,68 +782,11 @@
 		</div>
 	</footer>
 
-	<style type="text/css">
-		@keyframes radar {
-		  0% {
-		    width: 150px;
-		    height: 150px;
-		    border: 40px solid #fff;
-		    opacity: 0;
-		  }
-
-		  50% {
-		    opacity: .1;
-		  }
-
-		  90% {
-		    width: 750px;
-		    height: 750px;
-		    border: 2px solid #fff;
-		    opacity: 0;
-		  }
-
-		  to {
-		    width: 1500px;
-		    height: 1500px;
-		    border: 2px solid #fff;
-		    opacity: 0;
-		  }
-		}
-
-		.open-source {
-		    overflow: hidden;
-		    transform: translate3d(0,0,0);
-		    background-image: linear-gradient(to bottom,#2276d2,#1c5fa8);
-		    padding: 45px 25px 50px;
-		    display: block;
-		}
-		.open-source .icon {
-			  position: relative;
-			  width: 85px;
-			  background-image: url();
-			}
-
-			.open-source .radar {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  border-radius: 50%;
-			  border: 10px solid #fff;
-			  width: 150px;
-			  height: 150px;
-			  transform: translate(-50%,-50%);
-			  animation: radar 2s infinite;
-			  opacity: 0;
-			}
-
-			.open-source .radar:nth-child(2) {
-			  animation-delay: .2s;
-			}
-
-			.open-source .radar:nth-child(3) {
-			  animation-delay: .5s;
-			}
-	</style>
+	<div id="goTop" >
+		<div class="go_top" title="Lên trên">
+			<i class="fa fa-arrow-up" aria-hidden="true"></i>
+		</div>
+	</div>
 
 	<link href="theme/frontend/css/jquery-ui.min.css" rel="stylesheet" media="screen">
 	<script src="theme/frontend/js/jquery-ui.min.js" defer></script>
