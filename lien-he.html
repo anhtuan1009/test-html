@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <base href='' />
+  <title>Theme001 - Travel</title>
+  <meta name="robots" CONTENT="index, follow">
+  <meta name="description" content="">
+  <link rel="canonical" href="http://theme001.com/index.html" />
+  <link rel="shortcut icon" href="theme/frontend/images/favicon.png">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="theme/frontend/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/camera.css" type="text/css" rel="stylesheet" />
+  <link href="theme/frontend/css/animate.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/owl.carousel.min.css" type="text/css" rel="stylesheet" />
+  <!-- <link href="theme/frontend/css/owl.theme.css" type="text/css" rel="stylesheet" /> -->
+  <link href="theme/frontend/css/owl.theme.default.min.css" type="text/css" rel="stylesheet" />
+  <link href="theme/frontend/css/owl.transitions.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/style.css" type="text/css" rel="stylesheet" />
+    <script>
+        function waitJquery(callbackwaitJquery) {
+            var i = 0; /* Bị lỗi gọi 2 lần nên cần biến này */
+            var interval = setInterval(function() {
+                if (window.jQuery) {
+                    jQuery(document).ready(function() {
+                        if (i++ == 0) {
+                            callbackwaitJquery();
+                        }
+                        clearInterval(interval);
+                    });
+                }
+            }, 10);
+        }
+    </script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="theme/frontend/js/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <header class="clear">
+        <div class="box header-top clear hidden-sm hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+
+                            <div class="header-top-left">
+                                <div class="item-contact-top">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <a href="mailTo:tuanlaph03362@gmail.com" title="Send Email">tuanlaph03362@gmail.com</a>
+                                </div>
+                                <div class="item-contact-top">
+                                    <i class="fa fa-phone"></i> 
+                                    <a href="tel:0979843527" title="Call Now"> 0979-843-527</a>
+                                </div>
+                                <div class="item-contact-top">
+                                    <i class="fa fa-calendar-times-o"></i>
+                                    <p>8h00.am - 17h30.pm</p>
+                                </div>
+                            </div><!-- End .header-top-left -->
+
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="box gradient clear"></div>
+        <div class="box header clear">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+                            <div class="box-logo-top">
+                                <a href="index.html" title="Title" class="div">
+                                    <img src="theme/frontend/images/logo.png" alt="Site name">
+                                </a>
+                            </div>
+                    </div>
+                    <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+                        <div class="row">
+                            <nav class="box-menu-top">
+                                <div class="list-menu-1">
+
+                                    <div class="item-menu-1">
+                                        <a class="link-menu-1" href="index.html" title="Title">Trang chủ</a>
+                                    </div><!-- End item-menu-1 -->
+
+                                    <div class="item-menu-1">
+                                        <a class="link-menu-1" href="#" title="Title">Giới thiệu</a>
+                                    </div><!-- End item-menu-1 -->
+                                    
+                                    <div class="item-menu-1">
+                                        <a class="link-menu-1" href="#" title="Title">Dịch vụ</a>
+                                        <div class="list-menu-2">
+                                            <div class="item-menu-2">
+                                                <a class="link-menu-2" href="#" title="Title">Submenu 1</a>
+                                            </div>
+                                            <div class="item-menu-2">
+                                                <a class="link-menu-2" href="#" title="Title">Submenu 2</a>
+                                            </div>
+                                        </div>
+                                    </div><!-- End item-menu-1 -->
+                                    
+                                    <div class="item-menu-1">
+                                        <a class="link-menu-1" href="tour_category.html" title="Title">Tour du lịch</a>
+                                        <div class="list-menu-2">
+                                            <div class="item-menu-2">
+                                                <a class="link-menu-2" href="tour_detail.html" title="Title">Tour detail</a>
+                                            </div>
+                                        </div>
+                                    </div><!-- End item-menu-1 -->
+
+                                    <div class="item-menu-1">
+                                        <a class="link-menu-1" href="new_category.html" title="Title">Tin tức</a>
+                                        <div class="list-menu-2">
+                                            <div class="item-menu-2">
+                                                <a class="link-menu-2" href="new_detail.html" title="Title">Post detail</a>
+                                            </div>
+                                        </div>
+                                    </div><!-- End item-menu-1 -->
+
+                                    <div class="item-menu-1">
+                                        <a class="link-menu-1" href="lien-he.html" title="Title">Liên hệ</a>
+                                    </div><!-- End item-menu-1 -->
+
+                                </div><!-- End list-menu-1 -->
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header><!-- End header -->
+
+
+    <section class="box maps_contact text-center">
+        <div class="box box-maps" style="height: 450px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5188187795047!2d105.80527801455095!3d21.011916986007495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab602de9caab%3A0x2defdd20ba3f2eac!2zMTY5IE5ndXnhu4VuIE5n4buNYyBWxaksIFRydW5nIEhvw6AsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1511946819380" style="border:0; width:100%; height:450px;" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="t_detail">
+            <div class="col-md-4">
+                <i class="fa fa-map-marker"></i>
+                <div class="col-left">
+                    <div class="limit">
+                        <h4>ĐỊA CHỈ</h4>
+                    </div>
+                    <p>Số 36, Ngõ 1, Đình Thôn Mỹ Đình, Hà Nội</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-envelope"></i>
+                <div class="col-left">
+                    <div class="limit">
+                        <h4>EMAIL</h4>
+                    </div>
+                    <p>tuanlaph03362@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-phone"></i>
+                <div class="col-left">
+                    <div class="limit">
+                        <h4>SỐ ĐIỆN THOẠI</h4>
+                    </div>
+                    <p>0979.843.527</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="space space60"></div>
+
+    <article class="box article-single-blog clear">
+        <div class="container">
+
+            <div class="box box-form-contact">
+                <form id="form_contact" name="form_contact" action="" method="post" class="form-horizontal">
+                    <fieldset>
+
+                    <!-- Form Name -->
+                    <legend><h1 class="box text-center uppercase">Liên hệ với chúng tôi</h1></legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-12">
+                      <input id="contact_name" name="contact_name" type="text" placeholder="Họ tên" class="form-control input-md" required="">
+                        
+                      </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-12">
+                      <input id="contact_email" name="contact_email" type="text" placeholder="Email" class="form-control input-md" required="">
+                        
+                      </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-12">
+                      <input id="contact_title" name="contact_title" type="text" placeholder="Tiêu đề" class="form-control input-md" required="">
+                        
+                      </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <textarea class="form-control" id="contact_content" name="contact_content" rows="4" placeholder="Nội dung..." required=""></textarea>
+                      </div>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <button id="contact_send" name="contact_send" class="btn btn-success btn_send_contact">Gửi liên hệ</button>
+                      </div>
+                    </div>
+
+                    </fieldset>
+                </form>
+            </div>
+
+
+        </div>
+    </article>
+
+    <div class="space space30"></div>
+
+
+
+    <div class="box gradient clear"></div>
+    <footer class="box">
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <span class="box title-footer">LOVE TRAVEL</span>
+                        <div class="box col-detail-ft">
+                            <div class="box-item-detail">
+                                <i class="fa fa-location-arrow"></i>
+                                <p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
+                            </div>
+                            <div class="box-item-detail">
+                                <i class="fa fa-phone"></i>
+                                <p>0979843527</p>
+                            </div>
+                            <div class="box-item-detail">
+                                <i class="fa fa-phone"></i>
+                                <p>tuanlaph03362@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <span class="box title-footer">Thẻ</span>
+                        <div class="box col-tag-ft">
+                            <a href="#" title="Title" class="item-tag">coffee</a>
+                            <a href="#" title="Title" class="item-tag">World</a>
+                            <a href="#" title="Title" class="item-tag">HTML</a>
+                            <a href="#" title="Title" class="item-tag">PHP</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <span class="box title-footer">Album Ảnh</span>
+                        <div class="box col-album-ft">
+                            <a href="#" title="Title" class="item-album">
+                                <img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
+                            </a>
+                            <a href="#" title="Title" class="item-album">
+                                <img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+                            </a>
+                            <a href="#" title="Title" class="item-album">
+                                <img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+                            </a>
+                            <a href="#" title="Title" class="item-album">
+                                <img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
+                            </a>
+                            <a href="#" title="Title" class="item-album">
+                                <img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+                            </a>
+                            <a href="#" title="Title" class="item-album">
+                                <img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <span class="box title-footer">LIÊN HỆ</span>
+                        <div class="box col-form-ft">
+                            <form action="" method="" class="">
+                                <input type="text" name="email" class="" value="" placeholder="Email">
+                                <textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
+                                <button type="submit" name="gui" class="btn btn-gui">Gửi</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 con-xs-12">
+                        <p style="line-height: 62px; margin: 0;">Copyright © 2017 Anh Tuan</p>
+                    </div>
+                    <div class="col-sm-6 col-md-6 con-xs-12">
+                        <div class="box socail-footer">
+                            <ul class="list-socail">
+                                <li class="item-socail f-left link-twitter"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-twitter"></i></a></li>
+                                <li class="item-socail f-left link-youtube"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-youtube"></i></a></li>
+                                <li class="item-socail f-left link-facebook"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-facebook"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style type="text/css">
+        @keyframes radar {
+          0% {
+            width: 150px;
+            height: 150px;
+            border: 40px solid #fff;
+            opacity: 0;
+          }
+
+          50% {
+            opacity: .1;
+          }
+
+          90% {
+            width: 750px;
+            height: 750px;
+            border: 2px solid #fff;
+            opacity: 0;
+          }
+
+          to {
+            width: 1500px;
+            height: 1500px;
+            border: 2px solid #fff;
+            opacity: 0;
+          }
+        }
+
+        .open-source {
+            overflow: hidden;
+            transform: translate3d(0,0,0);
+            background-image: linear-gradient(to bottom,#2276d2,#1c5fa8);
+            padding: 45px 25px 50px;
+            display: block;
+        }
+        .open-source .icon {
+              position: relative;
+              width: 85px;
+              background-image: url();
+            }
+
+            .open-source .radar {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              border-radius: 50%;
+              border: 10px solid #fff;
+              width: 150px;
+              height: 150px;
+              transform: translate(-50%,-50%);
+              animation: radar 2s infinite;
+              opacity: 0;
+            }
+
+            .open-source .radar:nth-child(2) {
+              animation-delay: .2s;
+            }
+
+            .open-source .radar:nth-child(3) {
+              animation-delay: .5s;
+            }
+    </style>
+
+    <link href="theme/frontend/css/jquery-ui.min.css" rel="stylesheet" media="screen">
+    <script src="theme/frontend/js/jquery-ui.min.js" defer></script>
+
+    <script>
+        $(function() {
+            $tooltip = $('.book_wrap a');
+            $tooltip.tooltip({
+                position: {
+                    my: "center top-50",
+                    at: "center top"
+                },
+
+            });
+        });
+        $(function() {
+            $('.tour_icon a').tooltip({
+                position: {
+                    my: "center top-50",
+                    at: "center top"
+                },
+
+            });
+        });
+
+        // waitJquery(function() {
+        //     checkMinheight('.order-box');
+        //     checkMinheight('.order-type');
+        // });
+    </script>
+
+
+  <script type="text/javascript" src="theme/frontend/js/wow.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/jquery.easing.1.3.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/camera.min.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/owl.carousel.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/owl.carousel.min.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/script.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/plug/script.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/jquery.sticky.js" defer></script>
+</body>
+</html>

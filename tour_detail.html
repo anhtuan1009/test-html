@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <base href='' />
+  <title>Theme001 - Travel</title>
+  <meta name="robots" CONTENT="index, follow">
+  <meta name="description" content="">
+  <link rel="canonical" href="http://theme001.com/index.html" />
+  <link rel="shortcut icon" href="theme/frontend/images/favicon.png">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="theme/frontend/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/camera.css" type="text/css" rel="stylesheet" />
+  <link href="theme/frontend/css/animate.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/owl.carousel.min.css" type="text/css" rel="stylesheet" />
+  <!-- <link href="theme/frontend/css/owl.theme.css" type="text/css" rel="stylesheet" /> -->
+  <link href="theme/frontend/css/owl.theme.default.min.css" type="text/css" rel="stylesheet" />
+  <link href="theme/frontend/css/owl.transitions.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/style.css" type="text/css" rel="stylesheet" />
+	<script>
+		function waitJquery(callbackwaitJquery) {
+		    var i = 0; /* Bị lỗi gọi 2 lần nên cần biến này */
+		    var interval = setInterval(function() {
+		        if (window.jQuery) {
+		            jQuery(document).ready(function() {
+		                if (i++ == 0) {
+		                    callbackwaitJquery();
+		                }
+		                clearInterval(interval);
+		            });
+		        }
+		    }, 10);
+		}
+	</script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="theme/frontend/js/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<header class="clear">
+		<div class="box header-top clear hidden-sm hidden-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+
+							<div class="header-top-left">
+								<div class="item-contact-top">
+									<i class="fa fa-envelope-o"></i>
+									<a href="mailTo:tuanlaph03362@gmail.com" title="Send Email">tuanlaph03362@gmail.com</a>
+								</div>
+								<div class="item-contact-top">
+									<i class="fa fa-phone"></i> 
+									<a href="tel:0979843527" title="Call Now"> 0979-843-527</a>
+								</div>
+								<div class="item-contact-top">
+									<i class="fa fa-calendar-times-o"></i>
+									<p>8h00.am - 17h30.pm</p>
+								</div>
+							</div><!-- End .header-top-left -->
+
+					</div>
+
+					<div class="col-md-6 col-sm-6 col-xs-12">
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="box gradient clear"></div>
+		<div class="box header clear">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+							<div class="box-logo-top">
+								<a href="index.html" title="Title" class="div">
+									<img src="theme/frontend/images/logo.png" alt="Site name">
+								</a>
+							</div>
+					</div>
+					<div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+						<div class="row">
+							<nav class="box-menu-top">
+								<div class="list-menu-1">
+
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="index.html" title="Title">Trang chủ</a>
+									</div><!-- End item-menu-1 -->
+
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="#" title="Title">Giới thiệu</a>
+									</div><!-- End item-menu-1 -->
+									
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="#" title="Title">Dịch vụ</a>
+										<div class="list-menu-2">
+											<div class="item-menu-2">
+												<a class="link-menu-2" href="#" title="Title">Submenu 1</a>
+											</div>
+											<div class="item-menu-2">
+												<a class="link-menu-2" href="#" title="Title">Submenu 2</a>
+											</div>
+										</div>
+									</div><!-- End item-menu-1 -->
+									
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="tour_category.html" title="Title">Tour du lịch</a>
+										<div class="list-menu-2">
+											<div class="item-menu-2">
+												<a class="link-menu-2" href="tour_detail.html" title="Title">Tour detail</a>
+											</div>
+										</div>
+									</div><!-- End item-menu-1 -->
+
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="new_category.html" title="Title">Tin tức</a>
+										<div class="list-menu-2">
+											<div class="item-menu-2">
+												<a class="link-menu-2" href="new_detail.html" title="Title">Post detail</a>
+											</div>
+										</div>
+									</div><!-- End item-menu-1 -->
+
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="lien-he.html" title="Title">Liên hệ</a>
+									</div><!-- End item-menu-1 -->
+
+								</div><!-- End list-menu-1 -->
+							</nav>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</header><!-- End header -->
+
+
+	<section class="box bg_banner_cate text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="mg0 pdt30 pdbt10">Tiêu đề</h2>
+					<div class="small_line mgt10 mgbt30"><span></span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="container">
+		<div class="t_detail">
+	        <div class="col-md-4">
+	            <i class="fa fa-info"></i>
+	            <div class="col-left">
+	                <div class="limit">
+	                    <h4>Teambuilding</h4>
+	                </div>
+	                <p>Loại hình du lịch</p>
+	            </div>
+	        </div>
+	        <div class="col-md-4">
+	            <i class="fa fa-calendar "></i>
+	            <div class="col-left">
+	                <div class="limit">
+	                    <h4>05/11/17</h4><h4>&nbsp;-&nbsp;</h4><h4>08/11/17</h4>
+	                </div>
+	                <p>Thời gian khởi hành - Thời gian kết thúc</p>
+	            </div>
+	        </div>
+	        <div class="col-md-4">
+	            <i class="fa fa-location-arrow"></i>
+	            <div class="col-left">
+	                <div class="limit">
+	                    <h4>Châu Âu</h4>
+	                </div>
+	                <p>Địa điểm du lịch</p>
+	            </div>
+	        </div>
+        </div>
+    </div>
+
+	<div class="space space60"></div>
+
+	<article class="box article-single-blog clear">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 col-xs-12">
+					<aside class="box box-aside">
+						<div class="t_price mgbt20">
+                            <p>2.000.000 ₫ / Người</p>
+                        </div>
+                        <div class="t_sup">
+                            <div class="t_sup_20">
+                                <p class="white">Love Travel luôn là bạn đồng hành số 1 với du khách trên mọi nẻo đường du lịch nước ngoài. Đến với Love Travel bạn sẽ tự tin khám phá và trải nghiệm được nhiều hơn, ở những vùng đất mới từ các quốc gia Đông Nam Á, xa hơn là các nước ở Châu Âu, Châu Úc, Châu Mỹ và thú vị hơn cả là vùng đất Châu Phi xa tít... </p>
+                            </div>
+                            <div class="t_arow">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="em_sup">
+                            <img class="img" src="http://theme131.kswebvn.com/userdata/2954/wp-content/themes/standard/css/images/home/sup.jpg">
+                            <div class="em_sup_right">
+                                <h4>Hỗ trợ khách hàng 24h/7</h4>
+                                <p>Nhanh tay đặt tour cho kỉ nghỉ</p>
+                            </div>
+                        </div>
+
+						<div class="custom_search">
+						    <div class="tab_book sidebar_fixed">
+						        <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+									<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+									    <li class="t1 ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-39" aria-selected="true">
+									        <a href="#tabs-1" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-39">Tìm kiếm</a>
+									    </li>
+									    <li class="t2 ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-2" aria-labelledby="ui-id-40" aria-selected="false">
+									        <a href="#tabs-2" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-40">Liên hệ</a>
+									    </li>
+									</ul>
+						            <div id="tabs-1" aria-labelledby="ui-id-39" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false">
+						                <div class="adv_search">
+											<form method="post" action="tim-kiem" name="">
+											    <div class="tax_select limit">
+											        <div class="tax_s tax_1">
+											            <select name="taxonomy[dd_dulich]" id="name">
+											            	<option value="">Tất cả Địa điểm du lịch</option>
+											            	<option value="chau-a">Châu Á</option><option value="chau-au">Châu Âu</option>
+											              	<option value="chau-my">Châu Mỹ</option><option value="chau-phi">Châu Phi</option>
+											                <option value="chau-uc">Châu Úc</option>
+											            </select>
+											        </div>
+											        <div class="tax_s tax_2">
+											            <select name="taxonomy[ht_dulich]" id="name">
+											            	<option value="">Tất cả hình thức du lịch</option>
+											            	<option value="du-lich-am-thuc">Du lịch ẩm thực</option>
+											                <option value="du-lich-tham-quan">Du lịch tham quan</option>
+											              	<option value="du-lich-van-hoa">Du lịch văn hóa</option>
+											                <option value="du-lich-xanh">Du lịch xanh</option>
+											                <option value="teambuilding">Teambuilding</option>
+											            </select>
+											        </div>
+											    </div>
+											    <div class="per_number">
+											        <select name="per_num"><option value="">Tất cả số người</option><option value="Chọn">Chọn</option>
+											          	<option value="1 Người">1 Người</option>
+											          	<option value="2 Người">2 Người</option>
+											          	<option value="4 Người">4 Người</option>
+											            <option value="5 Người">5 Người</option>
+											            <option value="6 Người">6 Người</option>
+											            <option value="7 Người">7 Người</option>
+											            <option value="8 Người">8 Người</option>
+											            <option value="9 Người">9 Người</option>
+											            <option value="Nhiều hơn">Nhiều hơn</option>
+											         </select>
+											    </div>
+											    <div class="date_time_picker limit">
+											        <div class="dt_picker dt_picker_1 col-md-6 pd0">
+											            <input type="text" value="" name="from_date" id="date-time-1" placeholder="Bắt đầu" class="hasDatepicker">
+											        </div>
+											        <div class="dt_picker dt_picker_2 col-md-6 pd0">
+											            <input type="text" value="" name="to_date" id="date-time-2" placeholder="Kết thúc" class="hasDatepicker">
+											        </div>
+											        <script>
+											            jQuery(document).ready(function($) {
+											                $("#date-time-1").datepicker({
+											                    dateFormat: "dd/mm/yy"
+											                });
+											                $("#date-time-2").datepicker({
+											                    dateFormat: "dd/mm/yy"
+											                });
+											            });
+											        </script>
+											    </div>
+											    <div class="search_prices limit">
+
+											        <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+											            <div class="ui-slider-range ui-widget-header ui-corner-all" style="left: 6.66667%; width: 60%;"></div>
+											            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 6.66667%;"></a>
+											            <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6667%;"></a>
+											        </div>
+
+											        <input type="text" id="amount" value="" name="price" style="border:0; color:#f6931f; font-weight:bold;">
+
+											        <script>
+											            jQuery(document).ready(function($) {
+											                $("#slider-range").slider({
+											                    step: 100000,
+											                    range: true,
+											                    min: 0,
+											                    max: 15000000,
+											                    values: [1000000, 10000000],
+											                    slide: function(event, ui) {
+											                        $("#amount").val(ui.values[0] + "₫" + " - " + ui.values[1] + "₫");
+											                    }
+											                });
+											                $("#amount").val($("#slider-range").slider("values", 0) + "₫" + " - " + $("#slider-range").slider("values", 1) + "₫");
+											            });
+											        </script>
+											    </div>
+											    <input type="submit" name="submit" value="Tìm kiếm" id="s">
+											</form>
+						                </div>
+						            </div>
+						            <div id="tabs-2" aria-labelledby="ui-id-40" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+						                <div role="form" class="wpcf7" id="wpcf7-f104-o7" lang="en-US" dir="ltr">
+						                    <div class="screen-reader-response"></div>
+											<form action="/#wpcf7-f104-o7" method="post" class="wpcf7-form" novalidate="novalidate">
+											    <div style="display: none;">
+											        <input type="hidden" name="_wpcf7" value="104">
+											        <input type="hidden" name="_wpcf7_version" value="4.7">
+											        <input type="hidden" name="_wpcf7_locale" value="en_US">
+											        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f104-o7">
+											        <input type="hidden" name="_wpnonce" value="e607277b38">
+											    </div>
+											    <p class="ip">
+											        <span class="wpcf7-form-control-wrap your-name">
+											      		<input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Họ tên">
+											        </span>
+											    </p>
+											    <p class="ip">
+											        <span class="wpcf7-form-control-wrap your-email">
+											      		<input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Địa chỉ Email">
+											        </span>
+											    </p>
+											    <p class="ip">
+											        <span class="wpcf7-form-control-wrap your-subject">
+											      		<input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Tiêu đề">
+											        </span>
+											    </p>
+											    <p>
+											        <span class="wpcf7-form-control-wrap your-message">
+											          	<textarea name="your-message" cols="40" rows="4" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Nội dung liên hệ"></textarea>
+											        </span>
+											        <br>
+											        <span>
+											            <input type="submit" value="Gửi liên hệ" class="wpcf7-form-control wpcf7-submit btn">
+											          	<span></span>
+											        </span>
+											    </p>
+											    <div class="wpcf7-response-output wpcf7-display-none"></div>
+											</form>
+						                </div>
+						            </div>
+						        </div>
+						    </div>
+						    <script>
+						        waitJquery(function() {
+						            $("#tabs").tabs();
+						        });
+						    </script>
+						</div>
+
+					</aside>
+				</div>
+				<div class="col-sm-8 col-xs-12">
+					<div class="box box-single-img">
+						<img src="theme/frontend/images/love-travel-32-780.jpg" alt="Title" class="responsive">
+					</div>
+					<div class="box box-meta-blog">
+						<p> 
+							<i class="fa fa-calendar"></i> 20/11/2017
+							<i class="fa fa-user"></i> Mr.Admin
+							<i class="fa fa-comments"></i> 0 Comment
+						</p>
+					</div>
+					<div class="space space20"></div>
+
+					<h1 class="box title-blog-detail mgbt10">Bí quyết thiết kế website</h1>
+					<div class="box blog-detail clear">
+						<p>Website có ý nghĩa rất lớn với mỗi doanh nghiệp trong thời buổi hiện nay. Nó giống như một phòng trưng bày trên mạng Internet, nơi đó sẽ giới thiệu thông tin, hình ảnh của doanh nghiệp, dịch vụ hay sản phẩm của doanh nghiệp mà khách hàng có thể truy cập dù ở bất kỳ nơi đâu, bất cứ lúc nào không giới hạn không gian và thời gian. Issales sẽ gửi đến bạn những bí quyết thiết kế website đẹp qua bài viết dưới đây.</p>
+						<p>Website có ý nghĩa rất lớn với mỗi doanh nghiệp trong thời buổi hiện nay. Nó giống như một phòng trưng bày trên mạng Internet, nơi đó sẽ giới thiệu thông tin, hình ảnh của doanh nghiệp, dịch vụ hay sản phẩm của doanh nghiệp mà khách hàng có thể truy cập dù ở bất kỳ nơi đâu, bất cứ lúc nào không giới hạn không gian và thời gian. Issales sẽ gửi đến bạn những bí quyết thiết kế website đẹp qua bài viết dưới đây.</p>
+						<p>Website có ý nghĩa rất lớn với mỗi doanh nghiệp trong thời buổi hiện nay. Nó giống như một phòng trưng bày trên mạng Internet, nơi đó sẽ giới thiệu thông tin, hình ảnh của doanh nghiệp, dịch vụ hay sản phẩm của doanh nghiệp mà khách hàng có thể truy cập dù ở bất kỳ nơi đâu, bất cứ lúc nào không giới hạn không gian và thời gian. Issales sẽ gửi đến bạn những bí quyết thiết kế website đẹp qua bài viết dưới đây.</p>
+						<p>Website có ý nghĩa rất lớn với mỗi doanh nghiệp trong thời buổi hiện nay. Nó giống như một phòng trưng bày trên mạng Internet, nơi đó sẽ giới thiệu thông tin, hình ảnh của doanh nghiệp, dịch vụ hay sản phẩm của doanh nghiệp mà khách hàng có thể truy cập dù ở bất kỳ nơi đâu, bất cứ lúc nào không giới hạn không gian và thời gian. Issales sẽ gửi đến bạn những bí quyết thiết kế website đẹp qua bài viết dưới đây.</p>
+						<p>Website có ý nghĩa rất lớn với mỗi doanh nghiệp trong thời buổi hiện nay. Nó giống như một phòng trưng bày trên mạng Internet, nơi đó sẽ giới thiệu thông tin, hình ảnh của doanh nghiệp, dịch vụ hay sản phẩm của doanh nghiệp mà khách hàng có thể truy cập dù ở bất kỳ nơi đâu, bất cứ lúc nào không giới hạn không gian và thời gian. Issales sẽ gửi đến bạn những bí quyết thiết kế website đẹp qua bài viết dưới đây.</p>
+					</div>
+
+					<div class="space space20"></div>
+
+					<div class="box box_lib_img_tour" id="slide_gallery_tour">
+						<div class="box box-img-item-tour">
+							<img src="theme/frontend/images/fiji2-768x432.jpg" alt="Title" class="responsive">
+						</div>
+						<div class="box box-img-item-tour">
+							<img src="theme/frontend/images/love-travel-9-600.jpg" alt="Title" class="responsive">
+						</div>
+						<div class="box box-img-item-tour">
+							<img src="theme/frontend/images/love-travel-10-600.jpg" alt="Title" class="responsive">
+						</div>
+					</div>
+
+					<div class="space space20"></div>
+
+					<div class="t_baogom">
+					    <div class="tt_baogom">
+					        <h3>Bao gồm / không bao gồm</h3>
+					        <span></span>
+					    </div>
+					    <div class="tc_baogom">
+					        <div class="ok_baogom">
+					            <ul>
+					                <li> Ăn Sáng</li>
+					                <li>Ăn Trưa </li>
+					                <li>Ăn Tối</li>
+					                <li> Xe Máy Lạnh </li>
+					            </ul>
+					        </div>
+					        <div class="no_baogom">
+					            <ul>
+					                <li>Quà tặng</li>
+					                <li>Phí visa châu âu (3 triệu)</li>
+					                <li>Chí phí cá nhân, hành lý quá cước và các chi phí phát sinh ngoài chương trình.</li>
+					                <li>Hướng dẫn viên và tài xế địa phương: 7EUR/khách/ngày.</li>
+					            </ul>
+					        </div>
+
+					    </div>
+					</div>
+
+					<div class="space space20"></div>
+					
+					<div class="lich_trinh limit">
+					    <div class="tt_baogom">
+							<h4 class="title-schedule mg0 mgbt10">Lịch trình</h4>
+					        <span class="underlined"></span>
+					    </div>
+					    <div class="lich_trinh_wrap limit clear">
+					        <div class="lich_trinh_box">
+					            <div class="tg_item">
+					                <h5>NGÀY 01</h5>
+					            </div>
+					            <div class="tg_content">
+					                <p>Quý khách tập trung tại sân bay Tân Sơn Nhất - Ga đi quốc tế. Hướng dẫn viên đón và hỗ trợ Quý khách lúc 16:00 làm thủ tục đón chuyến bay đi Paris.<br>
+					                    <br> Chuyến bay dự kiến theo kế hoạch.<br>
+					                    <br> QR 971 23DEC 1 SGNDOH HK26 1910 2350 <br>
+					                    <br> QR 041 24DEC 2 DOHCDG HK26 0130 0630 <br>
+					                    <br> Quý khách ăn uống và nghỉ ngơi trên máy bay.</p>
+					            </div>
+					            <div class="last_toggle_el"></div>
+					        </div>
+					        <div class="lich_trinh_box">
+					            <div class="tg_item">
+					                <h5>NGÀY 02</h5>
+					            </div>
+					            <div class="tg_content">
+					                <p>PARIS<br> Sáng: Đoàn đến sân bay quốc tế CDG Paris, xe đón đoàn đưa đi tham quan <br>
+					                    <br> Arc De Triomphe – Khải Hoàn Môn: Là một trong những công trình biểu tượng của Nước Pháp. Nơi nhiều sự kiện lịch sử quan trọng ảnh hưởng đến nước Pháp được tổ chức ở đây. Nhiều công trình điêu khắc nổi tiếng về những trận đánh lịch sử được trưng bày ở đây, đặc biệt công trình điêu khắc tên “The Marseillaise” của điêu khắc gia nổi tiếng Francois Rude. <br>
+					                    <br> Champs Elysees – Đại lộ Thiên Đàng – Là Đại lộ đẹp nhất Thế giới và còn là nơi tập trung nhiều cửa hàng sang trọng nhất của “Kinh Đô Ánh Sáng Paris”.</p>
+					            </div>
+					            <div class="last_toggle_el"></div>
+					        </div>
+					        <div class="lich_trinh_box">
+					            <div class="tg_item">
+					                <h5>NGÀY 03</h5>
+					            </div>
+					            <div class="tg_content">
+					                <p>PARIS – LUXEMBOURG<br>
+					                    <br> Sáng: Sau khi ăn sáng tại khách sạn, xe đón đoàn đưa đi tham quan<br>
+					                    <br> Tiếp tục tham quan Paris</p>
+					            </div>
+					            <div class="last_toggle_el"></div>
+					        </div>
+					    </div>
+
+					    <script>
+					        jQuery(".tg_item").unbind('click').click(function(e) {
+					            if (jQuery(this).next().is(':animated')) {
+					                return false;
+					            }
+					            if (jQuery(this).hasClass('title_active')) {
+					                jQuery(this).removeClass('title_active').next().slideUp(300);
+					            } else {
+					                jQuery(this).addClass('title_active').next().slideDown(300);
+					            }
+					        });
+					        jQuery('.tg_content').each(function(index) {
+					            if (jQuery(this).next().is('.tg_item') == false) {
+					                jQuery('<div class="last_toggle_el"></div>').insertAfter(this);
+					            }
+					        });
+					    </script>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<div class="space space30"></div>
+
+
+	<article class="box article-1 clear pdtb30">
+		<div class="container">
+			<div class="box text-center">
+				<h2 class="title-article pdtb10">Các tour liên quan</h2>
+				<div class="small_line mgt10 mgbt30"><span></span></div>
+			</div>
+			<div class="row">
+
+				<div class="col-md-3 col-sm-6 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="price_fade">
+					            <p>2.000.000 ₫</p>
+					        </div>
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="title_wrap">
+					        <h4>Hallstatt</h4>
+					    </div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-3 col-sm-6 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="price_fade">
+					            <p>2.000.000 ₫</p>
+					        </div>
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="title_wrap">
+					        <h4>Hallstatt</h4>
+					    </div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-3 col-sm-6 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="price_fade">
+					            <p>2.000.000 ₫</p>
+					        </div>
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="title_wrap">
+					        <h4>Hallstatt</h4>
+					    </div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-3 col-sm-6 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="price_fade">
+					            <p>2.000.000 ₫</p>
+					        </div>
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="title_wrap">
+					        <h4>Hallstatt</h4>
+					    </div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</article>
+
+
+	<div class="box gradient clear"></div>
+	<footer class="box">
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<span class="box title-footer">LOVE TRAVEL</span>
+						<div class="box col-detail-ft">
+							<div class="box-item-detail">
+								<i class="fa fa-location-arrow"></i>
+								<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
+							</div>
+							<div class="box-item-detail">
+								<i class="fa fa-phone"></i>
+								<p>0979843527</p>
+							</div>
+							<div class="box-item-detail">
+								<i class="fa fa-phone"></i>
+								<p>tuanlaph03362@gmail.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<span class="box title-footer">Thẻ</span>
+						<div class="box col-tag-ft">
+							<a href="#" title="Title" class="item-tag">coffee</a>
+							<a href="#" title="Title" class="item-tag">World</a>
+							<a href="#" title="Title" class="item-tag">HTML</a>
+							<a href="#" title="Title" class="item-tag">PHP</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<span class="box title-footer">Album Ảnh</span>
+						<div class="box col-album-ft">
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<span class="box title-footer">LIÊN HỆ</span>
+						<div class="box col-form-ft">
+							<form action="" method="" class="">
+								<input type="text" name="email" class="" value="" placeholder="Email">
+								<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
+								<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-md-6 con-xs-12">
+						<p style="line-height: 62px; margin: 0;">Copyright © 2017 Anh Tuan</p>
+					</div>
+					<div class="col-sm-6 col-md-6 con-xs-12">
+						<div class="box socail-footer">
+							<ul class="list-socail">
+								<li class="item-socail f-left link-twitter"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-twitter"></i></a></li>
+								<li class="item-socail f-left link-youtube"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-youtube"></i></a></li>
+								<li class="item-socail f-left link-facebook"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-facebook"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<style type="text/css">
+		@keyframes radar {
+		  0% {
+		    width: 150px;
+		    height: 150px;
+		    border: 40px solid #fff;
+		    opacity: 0;
+		  }
+
+		  50% {
+		    opacity: .1;
+		  }
+
+		  90% {
+		    width: 750px;
+		    height: 750px;
+		    border: 2px solid #fff;
+		    opacity: 0;
+		  }
+
+		  to {
+		    width: 1500px;
+		    height: 1500px;
+		    border: 2px solid #fff;
+		    opacity: 0;
+		  }
+		}
+
+		.open-source {
+		    overflow: hidden;
+		    transform: translate3d(0,0,0);
+		    background-image: linear-gradient(to bottom,#2276d2,#1c5fa8);
+		    padding: 45px 25px 50px;
+		    display: block;
+		}
+		.open-source .icon {
+			  position: relative;
+			  width: 85px;
+			  background-image: url();
+			}
+
+			.open-source .radar {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  border-radius: 50%;
+			  border: 10px solid #fff;
+			  width: 150px;
+			  height: 150px;
+			  transform: translate(-50%,-50%);
+			  animation: radar 2s infinite;
+			  opacity: 0;
+			}
+
+			.open-source .radar:nth-child(2) {
+			  animation-delay: .2s;
+			}
+
+			.open-source .radar:nth-child(3) {
+			  animation-delay: .5s;
+			}
+	</style>
+
+	<link href="theme/frontend/css/jquery-ui.min.css" rel="stylesheet" media="screen">
+	<script src="theme/frontend/js/jquery-ui.min.js" defer></script>
+
+	<script>
+	    $(function() {
+	        $tooltip = $('.book_wrap a');
+	        $tooltip.tooltip({
+	            position: {
+	                my: "center top-50",
+	                at: "center top"
+	            },
+
+	        });
+	    });
+	    $(function() {
+	        $('.tour_icon a').tooltip({
+	            position: {
+	                my: "center top-50",
+	                at: "center top"
+	            },
+
+	        });
+	    });
+
+	    // waitJquery(function() {
+	    //     checkMinheight('.order-box');
+	    //     checkMinheight('.order-type');
+	    // });
+	</script>
+
+
+  <script type="text/javascript" src="theme/frontend/js/wow.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/jquery.easing.1.3.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/camera.min.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/owl.carousel.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/owl.carousel.min.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/script.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/plug/script.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/jquery.sticky.js" defer></script>
+</body>
+</html>

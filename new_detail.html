@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <base href='' />
+  <title>Theme001 - Travel</title>
+  <meta name="robots" CONTENT="index, follow">
+  <meta name="description" content="">
+  <link rel="canonical" href="http://theme001.com/index.html" />
+  <link rel="shortcut icon" href="theme/frontend/images/favicon.png">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="theme/frontend/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/camera.css" type="text/css" rel="stylesheet" />
+  <link href="theme/frontend/css/animate.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/owl.carousel.min.css" type="text/css" rel="stylesheet" />
+  <!-- <link href="theme/frontend/css/owl.theme.css" type="text/css" rel="stylesheet" /> -->
+  <link href="theme/frontend/css/owl.theme.default.min.css" type="text/css" rel="stylesheet" />
+  <link href="theme/frontend/css/owl.transitions.css" type="text/css" rel="stylesheet" />
+
+  <link href="theme/frontend/css/style.css" type="text/css" rel="stylesheet" />
+	<script>
+		function waitJquery(callbackwaitJquery) {
+		    var i = 0; /* Bị lỗi gọi 2 lần nên cần biến này */
+		    var interval = setInterval(function() {
+		        if (window.jQuery) {
+		            jQuery(document).ready(function() {
+		                if (i++ == 0) {
+		                    callbackwaitJquery();
+		                }
+		                clearInterval(interval);
+		            });
+		        }
+		    }, 10);
+		}
+	</script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="theme/frontend/js/jquery-2.2.1.min.js"></script>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<header class="clear">
+		<div class="box header-top clear hidden-sm hidden-xs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-xs-12">
+
+							<div class="header-top-left">
+								<div class="item-contact-top">
+									<i class="fa fa-envelope-o"></i>
+									<a href="mailTo:tuanlaph03362@gmail.com" title="Send Email">tuanlaph03362@gmail.com</a>
+								</div>
+								<div class="item-contact-top">
+									<i class="fa fa-phone"></i> 
+									<a href="tel:0979843527" title="Call Now"> 0979-843-527</a>
+								</div>
+								<div class="item-contact-top">
+									<i class="fa fa-calendar-times-o"></i>
+									<p>8h00.am - 17h30.pm</p>
+								</div>
+							</div><!-- End .header-top-left -->
+
+					</div>
+
+					<div class="col-md-6 col-sm-6 col-xs-12">
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="box gradient clear"></div>
+		<div class="box header clear">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-lg-2 col-md-3 col-sm-3 col-xs-12">
+							<div class="box-logo-top">
+								<a href="index.html" title="Title" class="div">
+									<img src="theme/frontend/images/logo.png" alt="Site name">
+								</a>
+							</div>
+					</div>
+					<div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+						<div class="row">
+							<nav class="box-menu-top">
+								<div class="list-menu-1">
+
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="index.html" title="Title">Trang chủ</a>
+									</div><!-- End item-menu-1 -->
+
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="#" title="Title">Giới thiệu</a>
+									</div><!-- End item-menu-1 -->
+									
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="#" title="Title">Dịch vụ</a>
+										<div class="list-menu-2">
+											<div class="item-menu-2">
+												<a class="link-menu-2" href="#" title="Title">Submenu 1</a>
+											</div>
+											<div class="item-menu-2">
+												<a class="link-menu-2" href="#" title="Title">Submenu 2</a>
+											</div>
+										</div>
+									</div><!-- End item-menu-1 -->
+									
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="tour_category.html" title="Title">Tour du lịch</a>
+										<div class="list-menu-2">
+											<div class="item-menu-2">
+												<a class="link-menu-2" href="tour_detail.html" title="Title">Tour detail</a>
+											</div>
+										</div>
+									</div><!-- End item-menu-1 -->
+
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="new_category.html" title="Title">Tin tức</a>
+										<div class="list-menu-2">
+											<div class="item-menu-2">
+												<a class="link-menu-2" href="new_detail.html" title="Title">Post detail</a>
+											</div>
+										</div>
+									</div><!-- End item-menu-1 -->
+
+									<div class="item-menu-1">
+										<a class="link-menu-1" href="lien-he.html" title="Title">Liên hệ</a>
+									</div><!-- End item-menu-1 -->
+
+								</div><!-- End list-menu-1 -->
+							</nav>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</header><!-- End header -->
+
+
+	<section class="box bg_banner_cate text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="mg0 pdt30 pdbt10">Thiếu nhân lực IT, Bộ GDĐT áp dụng cơ chế đặc biệt, cho phép sinh viên ngành khác có thể chuyển sang học CNTT</h2>
+					<div class="small_line mgt10 mgbt30"><span></span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="space space60"></div>
+
+	<article class="box article-single-blog clear">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-xs-12">
+					<div class="box box-single-img">
+						<img src="theme/frontend/images/CNTT.jpg" alt="Title" class="responsive">
+					</div>
+					<div class="box box-meta-blog">
+						<p> 
+							<i class="fa fa-calendar"></i> 21/11/2017
+							<i class="fa fa-user"></i> Mr.TopIT
+							<i class="fa fa-comments"></i> 0 Comment
+						</p>
+					</div>
+					<div class="space space20"></div>
+
+					<h1 class="box title-blog-detail mgbt10">Thiếu nhân lực IT, Bộ GDĐT áp dụng cơ chế đặc biệt, cho phép sinh viên ngành khác có thể chuyển sang học CNTT</h1>
+					<div class="box blog-detail clear text-justify">
+						<p class="p-bold">Bộ Giáo dục và Đào tạo (GD&ĐT) vừa có công văn gửi các trường đại học, học viện, chính thức thông báo việc bộ này cho phép áp dụng cơ chế đặc thù đào tạo các ngành thuộc lĩnh vực công nghệ thông tin (CNTT) trình độ đại học.</p>
+
+						<p>Theo đó, những ngành được áp dụng cơ chế đặc thù, bao gồm: Khoa học máy tính; Mạng máy tính và truyền thông dữ liệu; Kỹ thuật phần mềm; Kỹ thuật máy tính; Hệ thống thông tin; Hệ thống thông tin quản lý; Công nghệ kỹ thuật máy tính; Công nghệ thông tin; An toàn thông tin; Công nghệ thông tin ứng dụng trong lĩnh vực kinh tế - xã hội, như CNTT ứng dụng trong quản lý kinh tế; CNTT ứng dụng trong các ngành kỹ thuật…</p>
+						<p>Đối với các sinh viên đang học đại học hết năm thứ 1, 2, 3 các ngành khác nếu có nguyện vọng có thể được chuyển sang học các ngành CNTT ở trong cùng một cơ sở đào tạo hoặc chuyển sang các cơ sở đào tạo khác có đào tạo các ngành CNTT.</p>
+						<p>Chỉ tiêu và điều kiện chuyển ngành học do thủ trưởng các cơ sở đào tạo quy định cụ thể theo hướng mở, công khai và đảm bảo các điều kiện đầu vào tối thiểu của chương trình đào tạo. Thủ tục chuyển trường thực hiện theo quy định pháp luật hiện hành.</p>
+						<p>Bộ GD&ĐT cũng khuyến khích các cơ sở đào tạo mở các ngành mới trong nhóm ngành CNTT, các ngành/chuyên ngành CNTT ứng dụng trong lĩnh vực kinh tế - xã hội, đáp ứng nhu cầu của thị trường lao động và hội nhập quốc tế.</p>
+						<p>Các cơ sở đào tạo phải có chính sách thu hút các nhà khoa học Việt Nam ở nước ngoài, chuyên gia CNTT quốc tế tham gia công tác đào tạo, nghiên cứu khoa học; khuyến khích chuyên gia, cán bộ kỹ thuật, cán bộ quản lý (gọi chung là chuyên gia) có kinh nghiệm hoạt động nghề nghiệp của doanh nghiệp tham gia đào tạo nhân lực CNTT. Các chuyên gia này là người có trình độ từ thạc sĩ trở lên hoặc tốt nghiệp đại học có từ 5 năm kinh nghiệm trở lên đúng ngành tham gia đào tạo.</p>
+						<p>Trên cơ sở thống nhất với doanh nghiệp đối tác về tỉ lệ thời gian tham gia đào tạo của các chuyên gia, cơ sở đào tạo được tính các chuyên gia là giảng viên cơ hữu phù hợp với tỉ lệ thời gian tham gia đào tạo để xác định chỉ tiêu tuyển sinh các ngành CNTT.</p>
+						<p>Đồng thời, thời gian đào tạo thực tế tại doanh nghiệp phải đảm bảo ít nhất 30% tổng thời gian đào tạo và được xác định cụ thể trong chương trình đào tạo. Cơ sở đào tạo chịu trách nhiệm kiểm tra, giám sát, đáp ứng yêu cầu về điều kiện đảm bảo chất lượng thực tập, thực hành tại doanh nghiệp đối tác.</p>
+						<p>Bộ GD&ĐT cũng yêu cầu các cơ sở đào tạo khẩn trương triển khai xây dựng Đề án áp dụng cơ chế đặc thù đào tạo nhân lực CNTT trình độ đại học trong giai đoạn 2017 – 2020.</p>
+						<p>Bạn nghĩ sao về vấn đề này, công nghệ thông tin và lập trình là một nghề đặc thù, với yêu cầu kiến thức và kỹ năng cùng đam mê riêng biệt. Việc đào tạo đại trà và có phần hơi " Công Nghiệp" như hiện nay, có đạt được giải pháp thiếu nguồn nhân lực cho ngành công nghệ thông tin ngày mai, hay để lại hệ lụy cho các thế hệ sau....</p>
+					</div>
+
+					<div class="space space20"></div>
+
+					<div class="box box-title-meta">
+						<span class="title-meta">Thẻ: </span>
+						<a href="#" title="Title">thế giới</a>
+						<a href="#" title="Title">trong nước</a>
+						<a href="#" title="Title">thiết kế web</a>
+						<a href="#" title="Title">thế giới</a>
+						<a href="#" title="Title">trong nước</a>
+						<a href="#" title="Title">thiết kế web</a>
+						<a href="#" title="Title">thiết kế web</a>
+						<a href="#" title="Title">thế giới</a>
+					</div>
+
+					<div class="space space20"></div>
+
+					<div class="box box-title-meta mgbt20">
+						<span class="title-meta">Chuyên mục: </span>
+						<a href="#" title="Title">Tin tức</a>
+						<a href="#" title="Title">Giải trí</a>
+					</div>
+
+					<div class="box box-comment mgbt20 hidden">
+						<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="3"></div>
+					</div>
+
+					<section class="box box-related">
+						<h4 class="title-relate mg0 mgbt10">Tin liên quan</h4>
+						<span class="underlined"></span>
+
+						<div class="box box-list-related clear">
+							<div class="item-related"><a href="#" title="Title" class="link-related">Cuba</a></div>
+							<div class="item-related"><a href="#" title="Title" class="link-related">Paris</a></div>
+							<div class="item-related"><a href="#" title="Title" class="link-related">MELBOUNRE</a></div>
+						</div>
+					</section>
+
+				</div>
+				<div class="col-sm-4 col-xs-12">
+					<aside class="box box-aside">
+						<div class="box box-title-aside clear">
+							<span class="title-aside">Tìm kiếm</span>
+						</div>
+						<div class="box box-form-search-aside clear">
+							<form action="" method="post" class="">
+								<input type="text" name="keysearch" value="" class="frm-input">
+								<button type="submit" name="tim" class="btn btn-search">Tìm kiếm</button>
+							</form>
+						</div>
+						<div class="space space20"></div>
+						<div class="box box-title-aside">
+							<span class="title-aside">Các tin khác</span>
+						</div>
+						<div class="box box-post-other clear">
+							<a href="#" title="Title" class="link-post-other">Tin bài viết 1</a>
+							<a href="#" title="Title" class="link-post-other">Tin bài viết 2</a>
+							<a href="#" title="Title" class="link-post-other">Tin bài viết 3</a>
+							<a href="#" title="Title" class="link-post-other">Tin bài viết 4</a>
+							<a href="#" title="Title" class="link-post-other">Tin bài viết 5</a>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<div class="space space30"></div>
+
+	<article class="box article-list-blog clear pdtb30">
+		<div class="container">
+			<div class="box text-center">
+				<h2 class="title-article pdtb10">Các tin khác</h2>
+				<div class="small_line mgt10 mgbt20"><span></span></div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-md-4 col-sm-4 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+
+					    <div class="title_wrap">
+					        <h4>Cách phân biệt cà phê thật và cafe giả</h4>
+					    </div>
+
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="tour_detail bg_blogmeta flex">
+					        <div class="vitri_tour bg_author">
+					            <div class="white"><i class="fa fa-user"></i> Mr.T</div>
+					        </div>
+					        <div class="loai_hinh_tour">
+					            <div class="white"><i class="fa fa-comments"></i> 0 Bình luận</div>
+					        </div>
+					    </div>
+
+					    <div class="book_tour_wrap">
+					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
+							<div class="book_wrap wrapper">
+								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+							</div>
+					    </div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-4 col-sm-4 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+
+					    <div class="title_wrap">
+					        <h4>Cách phân biệt cà phê thật và cafe giả</h4>
+					    </div>
+
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="tour_detail bg_blogmeta flex">
+					        <div class="vitri_tour bg_author">
+					            <div class="white"><i class="fa fa-user"></i> Mr.T</div>
+					        </div>
+					        <div class="loai_hinh_tour">
+					            <div class="white"><i class="fa fa-comments"></i> 0 Bình luận</div>
+					        </div>
+					    </div>
+
+					    <div class="book_tour_wrap">
+					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
+							<div class="book_wrap wrapper">
+								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+							</div>
+					    </div>
+
+					</div>
+
+				</div>
+
+				<div class="col-md-4 col-sm-4 col-xs-6 full480 mgbt30">
+
+					<div class="tt_inner">
+
+					    <div class="title_wrap">
+					        <h4>Cách phân biệt cà phê thật và cafe giả</h4>
+					    </div>
+
+					    <div class="img_zoom">
+					        <img src="theme/frontend/images/love-travel-6-780.jpg" alt="Title" class="responsive">
+					        <div class="view_wrap">
+					            <div class="view_inner">
+					                <div class="view_middle">
+					                    <a href="#" title="Hallstatt">Xem</a>
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+
+					    <div class="tour_detail bg_blogmeta flex">
+					        <div class="vitri_tour bg_author">
+					            <div class="white"><i class="fa fa-user"></i> Mr.T</div>
+					        </div>
+					        <div class="loai_hinh_tour">
+					            <div class="white"><i class="fa fa-comments"></i> 0 Bình luận</div>
+					        </div>
+					    </div>
+
+					    <div class="book_tour_wrap">
+					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
+							<div class="book_wrap wrapper">
+								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+							</div>
+					    </div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</article>
+
+
+
+	<div class="box gradient clear"></div>
+	<footer class="box">
+		<div class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<span class="box title-footer">LOVE TRAVEL</span>
+						<div class="box col-detail-ft">
+							<div class="box-item-detail">
+								<i class="fa fa-location-arrow"></i>
+								<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
+							</div>
+							<div class="box-item-detail">
+								<i class="fa fa-phone"></i>
+								<p>0979843527</p>
+							</div>
+							<div class="box-item-detail">
+								<i class="fa fa-phone"></i>
+								<p>tuanlaph03362@gmail.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<span class="box title-footer">Thẻ</span>
+						<div class="box col-tag-ft">
+							<a href="#" title="Title" class="item-tag">coffee</a>
+							<a href="#" title="Title" class="item-tag">World</a>
+							<a href="#" title="Title" class="item-tag">HTML</a>
+							<a href="#" title="Title" class="item-tag">PHP</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<span class="box title-footer">Album Ảnh</span>
+						<div class="box col-album-ft">
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+							</a>
+							<a href="#" title="Title" class="item-album">
+								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+							</a>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<span class="box title-footer">LIÊN HỆ</span>
+						<div class="box col-form-ft">
+							<form action="" method="" class="">
+								<input type="text" name="email" class="" value="" placeholder="Email">
+								<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
+								<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-md-6 con-xs-12">
+						<p style="line-height: 62px; margin: 0;">Copyright © 2017 Anh Tuan</p>
+					</div>
+					<div class="col-sm-6 col-md-6 con-xs-12">
+						<div class="box socail-footer">
+							<ul class="list-socail">
+								<li class="item-socail f-left link-twitter"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-twitter"></i></a></li>
+								<li class="item-socail f-left link-youtube"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-youtube"></i></a></li>
+								<li class="item-socail f-left link-facebook"><a href="#" rel="nofollow" class="box link-socail"><i class="fa fa-facebook"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<style type="text/css">
+		@keyframes radar {
+		  0% {
+		    width: 150px;
+		    height: 150px;
+		    border: 40px solid #fff;
+		    opacity: 0;
+		  }
+
+		  50% {
+		    opacity: .1;
+		  }
+
+		  90% {
+		    width: 750px;
+		    height: 750px;
+		    border: 2px solid #fff;
+		    opacity: 0;
+		  }
+
+		  to {
+		    width: 1500px;
+		    height: 1500px;
+		    border: 2px solid #fff;
+		    opacity: 0;
+		  }
+		}
+
+		.open-source {
+		    overflow: hidden;
+		    transform: translate3d(0,0,0);
+		    background-image: linear-gradient(to bottom,#2276d2,#1c5fa8);
+		    padding: 45px 25px 50px;
+		    display: block;
+		}
+		.open-source .icon {
+			  position: relative;
+			  width: 85px;
+			  background-image: url();
+			}
+
+			.open-source .radar {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  border-radius: 50%;
+			  border: 10px solid #fff;
+			  width: 150px;
+			  height: 150px;
+			  transform: translate(-50%,-50%);
+			  animation: radar 2s infinite;
+			  opacity: 0;
+			}
+
+			.open-source .radar:nth-child(2) {
+			  animation-delay: .2s;
+			}
+
+			.open-source .radar:nth-child(3) {
+			  animation-delay: .5s;
+			}
+	</style>
+
+	<link href="theme/frontend/css/jquery-ui.min.css" rel="stylesheet" media="screen">
+	<script src="theme/frontend/js/jquery-ui.min.js" defer></script>
+
+	<script>
+	    $(function() {
+	        $tooltip = $('.book_wrap a');
+	        $tooltip.tooltip({
+	            position: {
+	                my: "center top-50",
+	                at: "center top"
+	            },
+
+	        });
+	    });
+	    $(function() {
+	        $('.tour_icon a').tooltip({
+	            position: {
+	                my: "center top-50",
+	                at: "center top"
+	            },
+
+	        });
+	    });
+
+	    // waitJquery(function() {
+	    //     checkMinheight('.order-box');
+	    //     checkMinheight('.order-type');
+	    // });
+	</script>
+
+
+  <script type="text/javascript" src="theme/frontend/js/wow.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/jquery.easing.1.3.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/camera.min.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/owl.carousel.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/js/owl.carousel.min.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/script.js" defer></script>
+  <script type="text/javascript" src="theme/frontend/plug/script.js" defer></script>
+
+  <script type="text/javascript" src="theme/frontend/js/jquery.sticky.js" defer></script>
+</body>
+</html>
