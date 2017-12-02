@@ -1,30 +1,26 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <base href='' />
-  <title>Theme001 - Travel</title>
-  <meta name="robots" CONTENT="index, follow">
-  <meta name="description" content="">
-  <link rel="canonical" href="http://theme001.com/index.html" />
-  <link rel="shortcut icon" href="theme/frontend/images/favicon.png">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="theme/frontend/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
-
-  <link href="theme/frontend/css/camera.css" type="text/css" rel="stylesheet" />
-  <link href="theme/frontend/css/animate.css" type="text/css" rel="stylesheet" />
-
-  <link href="theme/frontend/css/owl.carousel.min.css" type="text/css" rel="stylesheet" />
-  <!-- <link href="theme/frontend/css/owl.theme.css" type="text/css" rel="stylesheet" /> -->
-  <link href="theme/frontend/css/owl.theme.default.min.css" type="text/css" rel="stylesheet" />
-  <link href="theme/frontend/css/owl.transitions.css" type="text/css" rel="stylesheet" />
-
-  <link href="theme/frontend/css/style.css" type="text/css" rel="stylesheet" />
-	<script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<base href="" />
+	<title>Theme001 - Travel</title>
+	<meta name="robots" CONTENT="index, follow">
+	<meta name="description" content="">
+	<link rel="canonical" href="http://theme001.com/index.html" />
+	<link rel="shortcut icon" href="theme/frontend/images/favicon.png">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/font-awesome.min.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/camera.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/animate.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/owl.carousel.min.css" />
+	<!-- <link type="text/css" rel="stylesheet" href="theme/frontend/css/owl.theme.css" /> -->
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/owl.theme.default.min.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/owl.transitions.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/style.css" />
+	<script type="text/javascript">
 		function waitJquery(callbackwaitJquery) {
 		    var i = 0; /* Bị lỗi gọi 2 lần nên cần biến này */
 		    var interval = setInterval(function() {
@@ -39,12 +35,14 @@
 		    }, 10);
 		}
 	</script>
-
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<!-- <script type="text/javascript" src="theme/frontend/js/libs-ajax-jquery-3.2.1.min.js"></script> -->
 	<script type="text/javascript" src="theme/frontend/js/jquery-2.2.1.min.js"></script>
+	<!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<script type="text/javascript" src="theme/frontend/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="load" style="display: none;"><img src="theme/frontend/css/images/cri.png" alt="Loadding..."></div>
 	<header class="clear">
 		<div class="box header-top clear hidden-sm hidden-xs">
 			<div class="container">
@@ -143,7 +141,7 @@
 			</div>
 		</div>
 
-		<script>
+		<script type="text/javascript">
 		    waitJquery(function(){
 		        // var stickyNavTop = $('.full-menubar').offset().top;
 		 
@@ -220,28 +218,35 @@
 	</header><!-- End header -->
 
 	<section class="box box-slideshow clear">
+		<h1 class="hidden">Tên công ty hiển thị ở đây</h1>
 		<div class="box slide-top">
 	        <div data-src="theme/frontend/images/slide-1.jpg" data-link="#" data-title="Slide 1">
-	        	<div class="box-text-slide-top fadeIn camera_effected">
-	        		<div class="text-slide-1 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp</div>
-	        		<div class="text-slide-2 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp</div>
-	        		<div class="text-slide-3 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp</div>
-	        	</div>
+	        	<div class="box-text-slide-top fadeInRight hidden-xs hidden-sm">
+	        		<div class="box-text-slide-inner">
+		        		<div class="text-slide-1 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp</div>
+		        		<div class="text-slide-2 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp</div>
+		        		<div class="text-slide-3 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp</div>
+		        	</div>
+		        </div>
 	        	<div class="camera_caption text-center">Mặt trăng đã khuất bóng.</div>
 	        </div>
 	        <div data-src="theme/frontend/images/slide.png" data-link="#" data-title="Slide 2">
-	        	<div class="box-text-slide-top fadeIn camera_effected">
-	        		<div class="text-slide-1 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp2</div>
-	        		<div class="text-slide-2 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp2</div>
-	        		<div class="text-slide-3 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp2</div>
+	        	<div class="box-text-slide-top fadeInRight hidden-xs hidden-sm">
+	        		<div class="box-text-slide-inner">
+		        		<div class="text-slide-1 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp2</div>
+		        		<div class="text-slide-2 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp2</div>
+		        		<div class="text-slide-3 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp2</div>
+	        		</div>
 	        	</div>
 	        	<div class="camera_caption text-center">Mặt trăng đã khuất bóng 2.</div>
 	        </div>
 	        <div data-src="theme/frontend/images/slide-1.jpg" data-link="#" data-title="Slide 3">
-	        	<div class="box-text-slide-top fadeIn camera_effected">
-	        		<div class="text-slide-1 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp3</div>
-	        		<div class="text-slide-2 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp3</div>
-	        		<div class="text-slide-3 fadeIn camera_effected">Giải pháp kế toán doanh nghiệp3</div>
+	        	<div class="box-text-slide-top fadeInRight hidden-xs hidden-sm">
+	        		<div class="box-text-slide-inner">
+		        		<div class="text-slide-1 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp3</div>
+		        		<div class="text-slide-2 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp3</div>
+		        		<div class="text-slide-3 owl-fadeUp-in camera_effected">Giải pháp kế toán doanh nghiệp3</div>
+		        	</div>
 	        	</div>
 	        	<div class="camera_caption text-center">Mặt trăng đã khuất bóng 3.</div>
 	        </div>
@@ -255,16 +260,16 @@
 					<div id="tabslide">
 			        <ul>
 			            <li class="q_tab">
-			            	<a href="#tabslide-1"><img src="theme/frontend/images/zoom-tool.png"> Tìm kiếm nhanh</a>
+			            	<a href="#tabslide-1" title="Tìm kiếm nhanh" rel="nofollow"><img src="theme/frontend/images/zoom-tool.png" alt="Title">Tìm kiếm nhanh</a>
 			            </li>
 			            <li class="a_tab">
-			            	<a href="#tabslide-2"><img src="theme/frontend/images/parameters.png">Tìm kiếm nâng cao</a>
+			            	<a href="#tabslide-2" title="Tìm kiếm nâng cao" rel="nofollow"><img src="theme/frontend/images/parameters.png" alt="Title">Tìm kiếm nâng cao</a>
 			            </li>
 			        </ul>
 			        
 			        <div id="tabslide-1">
 			        	<div class="q_search limit">
-			        		<form method="POST" action="tim-kiem" name="">
+			        		<form method="POST" action="tim-kiem" name="tim-kiem">
 					        	<div class="key_word col-md-2 pd0">
 					            	<input type="text" name="keyword" placeholder="Nhập tên Tour..." value="">
 				            	</div>
@@ -275,7 +280,7 @@
 									<div class="dt_picker dt_picker_2 col-sm-6 pd0">
 										<input type="text" value="" name="to_date" id="dtq-2" placeholder="Kết thúc"/>
 									</div>
-									<script>
+									<script type="text/javascript">
 										jQuery(document).ready(function($) {
 											$( "#dtq-1" ).datepicker({
 											  dateFormat: "dd/mm/yy"
@@ -291,7 +296,7 @@
 									<div id="slider-range1" class="col-md-6"></div>
 									<input type="text" id="amount1" class="col-md-6" value="" name="price" style="border:0; color:#f6931f; font-weight:bold;">
 
-									<script>
+									<script type="text/javascript">
 										jQuery(document).ready(function($) {
 											$( "#slider-range1" ).slider({
 										      	step: 100000,
@@ -319,7 +324,7 @@
 			        <div id="tabslide-2">
 			        	<div class="a_search">
 			            	<div class="adv_search">
-								<form method="POST" action="tim-kiem" name="">
+								<form method="POST" action="tim-kiem" name="ten-form">
 									<div class="tax_select col-md-6 pd0">
 									    <div class="tax_s tax_1 col-md-6">
 									        <select name="taxonomy[dd_dulich]" id="name">
@@ -375,7 +380,7 @@
 									    <div class="dt_picker dt_picker_2 col-md-6 pd0">
 									        <input type="text" value="" name="to_date" id="dta-2" placeholder="Kết thúc"/>
 									    </div>
-									    <script>
+									    <script type="text/javascript">
 									        jQuery(document).ready(function($) {
 									            $("#dta-1").datepicker({
 									                dateFormat: "dd/mm/yy"
@@ -390,7 +395,7 @@
 									<div class="search_prices col-md-6">
 									    <div id="slider-range2" class="col-md-6"></div>
 									    <input type="text" id="amount2" class="col-md-6" style="border:0; color:#f6931f; font-weight:bold;">
-									    <script>
+									    <script type="text/javascript">
 									        jQuery(document).ready(function($) {
 									            $("#slider-range2").slider({
 									                step: 100000,
@@ -417,7 +422,7 @@
 				    </div>
 			   </div>
 			</div>
-	    	<script>
+	    	<script type="text/javascript">
 				waitJquery(function(){
 					$( "#tabslide" ).tabs();
 				});
@@ -521,7 +526,7 @@
 								</a>
 								<div class="form-map-831 form-map">
 								    <div class="map_iframe">
-								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" frameborder="0" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
+								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
 								    </div>
 								</div>
 
@@ -529,13 +534,13 @@
 									<i class="fa fa-film "></i>
 								</a>
 								<div class="form-video-831 form-video">
-								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" gesture="media" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
+								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
 								</div>
 
 							</div>
 					    </div>
 
-						<script>
+						<script type="text/javascript">
 						    $(function() {
 						        // Đặt hàng
 						        $(".form-book-831").dialog({
@@ -702,7 +707,7 @@
 								</a>
 								<div class="form-map-882 form-map">
 								    <div class="map_iframe">
-								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" frameborder="0" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
+								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
 								    </div>
 								</div>
 
@@ -710,13 +715,13 @@
 									<i class="fa fa-film "></i>
 								</a>
 								<div class="form-video-882 form-video">
-								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" gesture="media" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
+								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
 								</div>
 
 							</div>
 					    </div>
 
-						<script>
+						<script type="text/javascript">
 						    $(function() {
 						        // Đặt hàng
 						        $(".form-book-882").dialog({
@@ -883,7 +888,7 @@
 								</a>
 								<div class="form-map-883 form-map">
 								    <div class="map_iframe">
-								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" frameborder="0" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
+								        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167998.10803373056!2d2.2069770643680573!3d48.85877410312378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2zUGEgcmksIFBow6Fw!5e0!3m2!1svi!2s!4v1511404528156" style="border:0;width:100%;height: 450px;" allowfullscreen></iframe>
 								    </div>
 								</div>
 
@@ -891,13 +896,13 @@
 									<i class="fa fa-film "></i>
 								</a>
 								<div class="form-video-883 form-video">
-								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" gesture="media" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
+								    <iframe src="https://www.youtube.com/embed/09wGTaGhrNE" style="border:0;width:100%;height: 480px;" allowfullscreen></iframe>
 								</div>
 
 							</div>
 					    </div>
 
-						<script>
+						<script type="text/javascript">
 						    $(function() {
 						        // Đặt hàng
 						        $(".form-book-883").dialog({
@@ -1115,7 +1120,7 @@
 									<i class="fa fa-film "></i>
 								</a>
 							</div>
-							<script>
+							<script type="text/javascript">
 								$(function () {
 									// Đặt hàng
 								    $(".form-book-830").dialog({
@@ -1310,6 +1315,7 @@
 
 
 	<section class="box section_2 text-center">
+		<h6 class="hidden">Thông kê TOUR</h6>
 		<div class="container">
 			<div class="row">
 				<div class="box counter_wrapper">
@@ -1347,8 +1353,8 @@
 					</div>
 				</div>
 
-				<script defer="defer" src="http://dawat.code.kswebvn.com/userdata/2849/wp-content/themes/standard/js/jquery.inview.min.js"></script>
-				<script defer="defer" src="http://theme131.kswebvn.com/userdata/2954/wp-content/themes/standard/js/jquery.countTo.js"></script>
+				<script defer="defer" src="theme/frontend/js/jquery.inview.min.js" type="text/javascript"></script>
+				<script defer="defer" src="theme/frontend/js/jquery.countTo.js" type="text/javascript"></script>
 			</div>
 		</div>
 	</section>
@@ -1388,7 +1394,7 @@
 										            </select>
 										        </div>
 										        <div class="tax_s tax_2">
-										            <select name="taxonomy[ht_dulich]" id="name">
+										            <select name="taxonomy[ht_dulich]" id="name2">
 										            	<option value="">Tất cả hình thức du lịch</option>
 										            	<option value="du-lich-am-thuc">Du lịch ẩm thực</option>
 										                <option value="du-lich-tham-quan">Du lịch tham quan</option>
@@ -1419,7 +1425,7 @@
 										        <div class="dt_picker dt_picker_2 col-md-6 pd0">
 										        	<input type="text" value="" name="to_date" id="date-time-2" placeholder="Kết thúc"/>
 										        </div>
-										        <script>
+										        <script type="text/javascript">
 										            jQuery(document).ready(function($) {
 										                $("#date-time-1").datepicker({
 										                    dateFormat: "dd/mm/yy"
@@ -1435,7 +1441,7 @@
 										        <div id="slider-range"></div>
 										        <input type="text" id="amount" value="" name="price" style="border:0; color:#f6931f; font-weight:bold;">
 
-										        <script>
+										        <script type="text/javascript">
 										            jQuery(document).ready(function($) {
 										                $("#slider-range").slider({
 										                    step: 100000,
@@ -1458,7 +1464,7 @@
 					            <div id="tabs-2">
 					                <div role="form" class="wpcf7" id="wpcf7-f104-o7" lang="en-US" dir="ltr">
 					                    <div class="screen-reader-response"></div>
-										<form action="" method="post" class="wpcf7-form" novalidate="novalidate">
+										<form action="." method="post" class="wpcf7-form" novalidate="novalidate">
 										    <div style="display: none;">
 										        <input type="hidden" name="_wpcf7" value="104">
 										        <input type="hidden" name="_wpcf7_version" value="4.7">
@@ -1485,7 +1491,7 @@
 												<br />
 												<span>
 												    <input type="submit" value="Gửi liên hệ" class="wpcf7-form-control wpcf7-submit btn" />
-												<span>
+												</span>
 											</p>
 									
 										    <div class="wpcf7-response-output wpcf7-display-none"></div>
@@ -1494,7 +1500,7 @@
 					            </div>
 					        </div>
 					    </div>
-					    <script>
+					    <script type="text/javascript">
 					        waitJquery(function() {
 					            $("#tabs").tabs();
 					        });
@@ -1748,7 +1754,7 @@
 	<footer class="box">
 		<div class="footer">
 			<div class="container">
-				<div class="row">
+				<div class="row ft_responsive_max991">
 					<div class="col-md-3 col-sm-6 col-xs-12">
 						<div class="widget widget_info_footer">
 							<span class="box title-footer">LOVE TRAVEL</span>
@@ -1784,7 +1790,7 @@
 							<span class="box title-footer">Album Ảnh</span>
 							<div class="box col-album-ft">
 								<a href="#" title="Title" class="item-album">
-									<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
+									<img src="theme/frontend/images/love-travel-15-556-150x150.jpg" alt="Title" class="responsive">
 								</a>
 								<a href="#" title="Title" class="item-album">
 									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
@@ -1808,9 +1814,9 @@
 						<div class="widget widget_contact_footer">
 							<span class="box title-footer">LIÊN HỆ</span>
 							<div class="box col-form-ft">
-								<form action="" method="" class="">
+								<form action="." method="post" class="">
 									<input type="text" name="email" class="" value="" placeholder="Email">
-									<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
+									<textarea name="content" id="noidung" cols="30" rows="2" placeholder="Nội dung"></textarea>
 									<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
 								</form>
 							</div>
@@ -1846,7 +1852,7 @@
 	</div>
 
 
-	<script>
+	<script type="text/javascript">
 		waitJquery(function(){
 			jQuery(window).scroll(function() {
 				var top=parseInt(jQuery(window).scrollTop())+parseInt('');
@@ -1863,7 +1869,7 @@
 	<link href="theme/frontend/css/jquery-ui.min.css" rel="stylesheet" media="screen">
 	<script src="theme/frontend/js/jquery-ui.min.js" defer></script>
 
-	<script>
+	<script type="text/javascript">
 	    $(function() {
 	        $tooltip = $('.book_wrap a');
 	        $tooltip.tooltip({

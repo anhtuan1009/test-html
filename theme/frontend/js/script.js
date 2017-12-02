@@ -1,52 +1,31 @@
-$("#btn-buy").click(function(){
-    $("#sdt").addClass("show-tel", {duration:600,effect:'blind'});
-    $("#lienhe").addClass("hidden", {duration:600,effect:'blind'});
+$(document).ready(function() {
+
+    $(document).ajaxStart(function() {
+        $('.load').fadeIn(300);
+    });
+    $(document).ajaxComplete(function(event, xhr, settings) {
+        $('.load').delay(500).fadeOut(500);
+    });
+    $(window).load(function(){
+        $('.load').fadeOut(1000);
+    });
+
 });
 
 // strat menu fixed
-var num = 80; //number of pixels before modifying styles
-
-$(window).bind('scroll', function() {
-    if ($(window).scrollTop() > num) {
-        $('header').addClass('fixed');
-    } else {
-        $('header').removeClass('fixed');
-    }
-});
+var num = 34; //number of pixels before modifying styles
+if($(window).width() >= 991){
+    $(window).bind('scroll', function() {
+        if ($(window).scrollTop() > num) {
+            $('.header-top').addClass('hidden');
+            $('header').addClass('fixed');
+        } else {
+            $('.header-top').removeClass('hidden');
+            $('header').removeClass('fixed');
+        }
+    });
+};
 // end menu fixed
-
-
-$(document).ready(function() {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) $('#goTop').fadeIn();
-        else $('#goTop').fadeOut();
-    });
-    $('#goTop').click(function() {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 'slow');
-        return false;
-    });
-    $('#goTop2').click(function() {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 'slow');
-        return false;
-    });
-
-});
-
-
-$(window).scroll(function() {    
-
-    var scroll = $(window).scrollTop();
-
-    if (scroll >= 200) {
-        $(".primary-menu").addClass("scroll-fixed");
-    }else{
-        $(".primary-menu").removeClass("scroll-fixed");
-    }
-});
 
 
 function callTooltip() {
@@ -71,14 +50,6 @@ function callTooltip() {
 
 
 jQuery(function($) {
-	
-    var wow = new WOW({offset:50,mobile:false}); wow.init();
-
-    var isChrome = !!window.chrome && !!window.chrome.webstore;
-    if(isChrome==true){
-        $('.top a h2').addClass("text-gd");
-    }
-
 
     if($('body').find(".slide-top").length > 0){
         $('.slide-top').camera({
@@ -92,6 +63,20 @@ jQuery(function($) {
             opacityOnGrid: false,
         });
     };
+
+    $("#btn-buy").click(function(){
+        $("#sdt").addClass("show-tel", {duration:600,effect:'blind'});
+        $("#lienhe").addClass("hidden", {duration:600,effect:'blind'});
+    });
+
+
+
+    var wow = new WOW({offset:50,mobile:false}); wow.init();
+
+    var isChrome = !!window.chrome && !!window.chrome.webstore;
+    if(isChrome==true){
+        $('.top a h2').addClass("text-gd");
+    }
 
     $('#slide_gallery_tour').owlCarousel({
         loop:false,
@@ -261,7 +246,84 @@ jQuery(function($) {
         $(".map iframe").css("pointer-events", "none"); 
     });
 
+
+
 });
+
+
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) $('#goTop').fadeIn();
+        else $('#goTop').fadeOut();
+    });
+    $('#goTop').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 'slow');
+        return false;
+    });
+
+});
+
+
+// $(window).scroll(function(){
+
+//     var scroll = $(window).scrollTop();
+//     if (scroll >= 200){
+//         $(".primary-menu").addClass("scroll-fixed");
+//     }else{
+//         $(".primary-menu").removeClass("scroll-fixed");
+//     }
+
+// });
+
+
+
+
+//Start JS counter
+jQuery(function($) {
+
+    //counter
+    $('#count').data('countToOptions', {
+        formatter: function(value, options) {
+            return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+        }
+    });
+
+    // start all the timers
+    $('.count_title').bind('inview', function(event, visible) {
+        if (visible == true) {
+            $('.count_title').each(count);
+        }
+    });
+
+    function count(options) {
+        var $this = $(this);
+        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+        $this.countTo(options);
+    }
+
+
+
+    $('.nav-tabs-dropdown').each(function(i, elm) {
+        $(elm).text($(elm).next('ul').find('li.active a').text());
+    });
+      
+    $('.nav-tabs-dropdown').on('click', function(e) {
+        e.preventDefault();    
+        $(e.target).toggleClass('open').next('ul').slideToggle();    
+    });
+
+    $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
+        e.preventDefault();    
+        $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());      
+    });
+
+
+
+});
+
+
 
 
 var tag = document.createElement('script');
@@ -279,55 +341,3 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
     event.target.mute();
 }
-
-
-$(window).load(function(){
-    $('.load').fadeOut(1000);
-});
-
-
-$('.nav-tabs-dropdown').each(function(i, elm) {
-    
-    $(elm).text($(elm).next('ul').find('li.active a').text());
-    
-});
-  
-$('.nav-tabs-dropdown').on('click', function(e) {
-
-    e.preventDefault();
-    
-    $(e.target).toggleClass('open').next('ul').slideToggle();
-    
-});
-
-$('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
-
-    e.preventDefault();
-    
-    $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
-      
-});
-
-
-//Start JS counter
-jQuery(function($) {
-
-    //counter
-    $('#count').data('countToOptions', {
-        formatter: function(value, options) {
-            return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-        }
-    });
-    // start all the timers
-    $('.count_title').bind('inview', function(event, visible) {
-        if (visible == true) {
-            $('.count_title').each(count);
-        }
-    });
-
-    function count(options) {
-        var $this = $(this);
-        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-        $this.countTo(options);
-    }
-});
