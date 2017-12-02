@@ -308,6 +308,10 @@ p {
 .f-right {
   float: right; }
 
+.center {
+  display: block;
+  text-align: -webkit-center; }
+
 #goTop {
   bottom: 10px;
   color: #FFFFFF;
@@ -552,6 +556,7 @@ header {
         left: 0;
         width: 0;
         opacity: 0;
+        padding: 0;
         background-color: #434A54; }
         header .header nav.box-menu-top .list-menu-2 .item-menu-2 {
           position: relative;
@@ -569,7 +574,9 @@ header {
             background-color: #4a515b; }
       header .header nav.box-menu-top .list-menu-1 {
         position: relative;
-        float: right; }
+        float: right;
+        padding: 0;
+        margin: 0; }
         header .header nav.box-menu-top .list-menu-1 .item-menu-1 {
           position: relative;
           display: inline-block;
