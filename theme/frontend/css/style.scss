@@ -530,6 +530,7 @@ p {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f76570', endColorstr='#c377e4', GradientType=1);
 }
 .menu-collapse {display: none; }
+nav .item-menu-1 span.submenu-button {display: none; }
 .fixed { position: fixed; display: block; width: 100%; z-index: 100;}
 header {
 	@include style-public;

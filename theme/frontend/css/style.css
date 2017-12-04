@@ -499,6 +499,9 @@ p {
 .menu-collapse {
   display: none; }
 
+nav .item-menu-1 span.submenu-button {
+  display: none; }
+
 .fixed {
   position: fixed;
   display: block;
