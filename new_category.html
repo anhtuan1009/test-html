@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <base href='' />
-  <title>Theme001 - Travel</title>
-  <meta name="robots" CONTENT="index, follow">
-  <meta name="description" content="">
-  <link rel="canonical" href="http://theme001.com/index.html" />
-  <link rel="shortcut icon" href="theme/frontend/images/favicon.png">
-
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="theme/frontend/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
-
-  <link href="theme/frontend/css/camera.css" type="text/css" rel="stylesheet" />
-  <link href="theme/frontend/css/animate.css" type="text/css" rel="stylesheet" />
-
-  <link href="theme/frontend/css/owl.carousel.min.css" type="text/css" rel="stylesheet" />
-  <!-- <link href="theme/frontend/css/owl.theme.css" type="text/css" rel="stylesheet" /> -->
-  <link href="theme/frontend/css/owl.theme.default.min.css" type="text/css" rel="stylesheet" />
-  <link href="theme/frontend/css/owl.transitions.css" type="text/css" rel="stylesheet" />
-
-  <link href="theme/frontend/css/style.css" type="text/css" rel="stylesheet" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<base href="" />
+	<title>Theme001 - Danh mục tin</title>
+	<meta name="robots" CONTENT="index, follow">
+	<meta name="description" content="">
+	<link rel="canonical" href="http://theme001.com/index.html" />
+	<link rel="shortcut icon" href="theme/frontend/images/favicon.png">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/font-awesome.min.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/camera.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/animate.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/owl.carousel.min.css" />
+	<!-- <link type="text/css" rel="stylesheet" href="theme/frontend/css/owl.theme.css" /> -->
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/owl.theme.default.min.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/owl.transitions.css" />
+	<link type="text/css" rel="stylesheet" href="theme/frontend/css/style.css" />
 	<script>
 		function waitJquery(callbackwaitJquery) {
 		    var i = 0; /* Bị lỗi gọi 2 lần nên cần biến này */
@@ -39,12 +35,14 @@
 		    }, 10);
 		}
 	</script>
-
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="theme/frontend/js/jquery-2.2.1.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<!-- <script src="theme/frontend/js/libs-ajax-jquery-3.2.1.min.js"></script> -->
+	<script src="theme/frontend/js/jquery-2.2.1.min.js"></script>
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	<script src="theme/frontend/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="load" style="display: none;"><img src="theme/frontend/css/images/cri.png" alt="Loadding..."></div>
 	<header class="clear">
 		<div class="box header-top clear hidden-sm hidden-xs">
 			<div class="container">
@@ -54,11 +52,11 @@
 							<div class="header-top-left">
 								<div class="item-contact-top">
 									<i class="fa fa-envelope-o"></i>
-									<a href="mailTo:tuanlaph03362@gmail.com" title="Send Email">tuanlaph03362@gmail.com</a>
+									<a href="mailTo:tuanlaph03362@gmail.com" title="Send Email" rel="nofollow">tuanlaph03362@gmail.com</a>
 								</div>
 								<div class="item-contact-top">
-									<i class="fa fa-phone"></i> 
-									<a href="tel:0979843527" title="Call Now"> 0979-843-527</a>
+									<i class="fa fa-phone"></i>
+									<a href="tel:0979843527" title="Call Now" rel="nofollow"> 0979-843-527</a>
 								</div>
 								<div class="item-contact-top">
 									<i class="fa fa-calendar-times-o"></i>
@@ -88,52 +86,53 @@
 					</div>
 					<div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
 						<div class="row">
-							<nav class="box-menu-top">
-								<div class="list-menu-1">
+							<div class="menu-collapse">Menu</div>
+							<nav class="box-menu-top" id="menu-primary">
+								<ul class="list-menu-1">
 
-									<div class="item-menu-1">
+									<li class="item-menu-1">
 										<a class="link-menu-1" href="index.html" title="Title">Trang chủ</a>
-									</div><!-- End item-menu-1 -->
+									</li><!-- End item-menu-1 -->
 
-									<div class="item-menu-1">
+									<li class="item-menu-1">
 										<a class="link-menu-1" href="#" title="Title">Giới thiệu</a>
-									</div><!-- End item-menu-1 -->
+									</li><!-- End item-menu-1 -->
 									
-									<div class="item-menu-1">
+									<li class="item-menu-1">
 										<a class="link-menu-1" href="#" title="Title">Dịch vụ</a>
-										<div class="list-menu-2">
-											<div class="item-menu-2">
+										<ul class="sub-menu list-menu-2">
+											<li class="item-menu-2">
 												<a class="link-menu-2" href="#" title="Title">Submenu 1</a>
-											</div>
-											<div class="item-menu-2">
+											</li>
+											<li class="item-menu-2">
 												<a class="link-menu-2" href="#" title="Title">Submenu 2</a>
-											</div>
-										</div>
-									</div><!-- End item-menu-1 -->
+											</li>
+										</ul>
+									</li><!-- End item-menu-1 -->
 									
-									<div class="item-menu-1">
+									<li class="item-menu-1">
 										<a class="link-menu-1" href="tour_category.html" title="Title">Tour du lịch</a>
-										<div class="list-menu-2">
-											<div class="item-menu-2">
+										<ul class="sub-menu list-menu-2">
+											<li class="item-menu-2">
 												<a class="link-menu-2" href="tour_detail.html" title="Title">Tour detail</a>
-											</div>
-										</div>
-									</div><!-- End item-menu-1 -->
+											</li>
+										</ul>
+									</li><!-- End item-menu-1 -->
 
-									<div class="item-menu-1">
+									<li class="item-menu-1">
 										<a class="link-menu-1" href="new_category.html" title="Title">Tin tức</a>
-										<div class="list-menu-2">
-											<div class="item-menu-2">
+										<ul class="sub-menu list-menu-2">
+											<li class="item-menu-2">
 												<a class="link-menu-2" href="new_detail.html" title="Title">Post detail</a>
-											</div>
-										</div>
-									</div><!-- End item-menu-1 -->
+											</li>
+										</ul>
+									</li><!-- End item-menu-1 -->
 
-									<div class="item-menu-1">
+									<li class="item-menu-1">
 										<a class="link-menu-1" href="lien-he.html" title="Title">Liên hệ</a>
-									</div><!-- End item-menu-1 -->
+									</li><!-- End item-menu-1 -->
 
-								</div><!-- End list-menu-1 -->
+								</ul><!-- End list-menu-1 -->
 							</nav>
 						</div>
 					</div>
@@ -141,6 +140,81 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+		    waitJquery(function(){
+		        // var stickyNavTop = $('.full-menubar').offset().top;
+		 
+		        // var stickyNav = function(){
+		        // var scrollTop = $(window).scrollTop();
+		              
+		        // if (scrollTop > stickyNavTop) { 
+		        //         $('.full-menubar').addClass('sticky');
+		        //     } else {
+		        //         $('.full-menubar').removeClass('sticky'); 
+		        //     }
+		        // };
+		         
+		        // stickyNav();
+		        //     $(window).scroll(function() {
+		        //       stickyNav();
+		        // });
+
+		        jQuery(".menu-collapse").click(function(){jQuery("#menu-primary").slideToggle('fast')});
+
+		                    // sidebar OPEN        
+		        jQuery('.sidebar_open').click(function(event){
+		            event.preventDefault();
+		            $('.right_sidebar').css({
+		                'right': '0px',
+		            });
+		            $('#full-container').css({
+		                'margin-left': '-300px',
+		            });
+		            $('.overlay').addClass('overlay_on');
+		        });
+		        // sidebar CLOSE   
+		        $('.sidebar_btn_close, .overlay').click(function(event){
+		            event.preventDefault();
+		            $('.right_sidebar').css({
+		                'right': '-300px'
+		            });
+		            $('#full-container').css({
+		                'margin-left': '0px'
+		            });
+		            $('.overlay').removeClass('overlay_on');
+		        });
+
+
+		    });
+		    // Dropdown menu
+
+		    waitJquery(function(){
+
+		        if( $(window).width() < 991 ){
+		            var obj = jQuery('#menu-primary li:has(ul)');
+		            obj.prepend('<span class="submenu-button fa fa-angle-right"></span>');
+		            
+		            jQuery('.submenu-button').click(function(e){  
+		                e.preventDefault();
+		                  if (jQuery(this).parent().children('ul.sub-menu').is(':visible')) {
+		                       jQuery(this).parent().children('ul.sub-menu').slideUp('fast');
+		                  } else {
+		                       jQuery(this).parent().children('ul.sub-menu').slideDown('fast');
+		                  }
+		        
+		                var $this = jQuery(this);
+		                $this.toggleClass('fa-angle-right');
+		                if($this.hasClass('fa-angle-right')){
+		                    $this.removeClass('fa-angle-down').addClass('fa-angle-right');         
+		                } else {
+		                    $this.removeClass('fa-angle-right').addClass('fa-angle-down');
+		                }
+		            });
+		        }
+
+		    });
+		</script>
 	</header><!-- End header -->
 
 
@@ -148,7 +222,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="mg0 pdtb30">DU LỊCH - ĐẢO HAWAII</h2>
+					<div class="box_banner_cate">
+						<div class="box box_title_banner">
+							<h2 class="mg0 pdt30 pdbt10">Tin tức</h2>
+							<div class="small_line mgt10 mgbt30"><span></span></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -157,10 +236,9 @@
 
 	<article class="box article-list-blog clear pdtb30">
 		<div class="container">
-			<div class="box text-center">
-				<h2 class="title-article pdtb10 uppercase">Tin tức</h2>
-				<div class="small_line mgt10 mgbt30"><span></span></div>
-			</div>
+
+			<div class="space20"></div>
+
 			<div class="row">
 
 				<div class="col-md-4 col-sm-4 col-xs-6 full480 mgbt30">
@@ -176,7 +254,7 @@
 					        <div class="view_wrap">
 					            <div class="view_inner">
 					                <div class="view_middle">
-					                    <a href="new_detail.html" title="Hallstatt">Xem</a>
+					                    <a href="new_detail.html" title="Hallstatt" rel="nofollow">Xem</a>
 					                </div>
 					            </div>
 					        </div>
@@ -194,7 +272,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="#" class="book_btn book" title="Title" rel="nofollow">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -215,7 +293,7 @@
 					        <div class="view_wrap">
 					            <div class="view_inner">
 					                <div class="view_middle">
-					                    <a href="new_detail.html" title="Hallstatt">Xem</a>
+					                    <a href="new_detail.html" title="Hallstatt" rel="nofollow">Xem</a>
 					                </div>
 					            </div>
 					        </div>
@@ -233,7 +311,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="#" class="book_btn book" title="Title" rel="nofollow">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -254,7 +332,7 @@
 					        <div class="view_wrap">
 					            <div class="view_inner">
 					                <div class="view_middle">
-					                    <a href="new_detail.html" title="Hallstatt">Xem</a>
+					                    <a href="new_detail.html" title="Hallstatt" rel="nofollow">Xem</a>
 					                </div>
 					            </div>
 					        </div>
@@ -272,7 +350,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="#" class="book_btn book" title="Title" rel="nofollow">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -293,7 +371,7 @@
 					        <div class="view_wrap">
 					            <div class="view_inner">
 					                <div class="view_middle">
-					                    <a href="new_detail.html" title="Hallstatt">Xem</a>
+					                    <a href="new_detail.html" title="Hallstatt" rel="nofollow">Xem</a>
 					                </div>
 					            </div>
 					        </div>
@@ -311,7 +389,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="#" class="book_btn book" title="Title" rel="nofollow">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -332,7 +410,7 @@
 					        <div class="view_wrap">
 					            <div class="view_inner">
 					                <div class="view_middle">
-					                    <a href="new_detail.html" title="Hallstatt">Xem</a>
+					                    <a href="new_detail.html" title="Hallstatt" rel="nofollow">Xem</a>
 					                </div>
 					            </div>
 					        </div>
@@ -350,7 +428,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="#" class="book_btn book" title="Title" rel="nofollow">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -371,7 +449,7 @@
 					        <div class="view_wrap">
 					            <div class="view_inner">
 					                <div class="view_middle">
-					                    <a href="new_detail.html" title="Hallstatt">Xem</a>
+					                    <a href="new_detail.html" title="Hallstatt" rel="nofollow">Xem</a>
 					                </div>
 					            </div>
 					        </div>
@@ -389,7 +467,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="#" class="book_btn book" title="Title" rel="nofollow">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -403,9 +481,9 @@
 				<div class="col-xs-12">
 					<div class="wp-pagenavi">
 						<span class="current">1</span>
-						<a class="page larger" href="#">2</a>
-						<a class="page larger" href="#">3</a>
-						<a class="nextpostslink" rel="next" href="#">»</a>
+						<a class="page larger" href="#" rel="nofollow">2</a>
+						<a class="page larger" href="#" rel="nofollow">3</a>
+						<a class="nextpostslink" rel="next" href="#" rel="nofollow">»</a>
 					</div>
 				</div>
 			</div>
@@ -418,64 +496,72 @@
 	<footer class="box">
 		<div class="footer">
 			<div class="container">
-				<div class="row">
+				<div class="row ft_responsive_max991">
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">LOVE TRAVEL</span>
-						<div class="box col-detail-ft">
-							<div class="box-item-detail">
-								<i class="fa fa-location-arrow"></i>
-								<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
-							</div>
-							<div class="box-item-detail">
-								<i class="fa fa-phone"></i>
-								<p>0979843527</p>
-							</div>
-							<div class="box-item-detail">
-								<i class="fa fa-phone"></i>
-								<p>tuanlaph03362@gmail.com</p>
+						<div class="widget widget_info_footer">
+							<span class="box title-footer">LOVE TRAVEL</span>
+							<div class="box col-detail-ft">
+								<div class="box-item-detail">
+									<i class="fa fa-location-arrow"></i>
+									<p>Số 36, Ngõ 1, Đình Thôn, Phường Mỹ Đình 1, Hà Nội</p>
+								</div>
+								<div class="box-item-detail">
+									<i class="fa fa-phone"></i>
+									<p>0979843527</p>
+								</div>
+								<div class="box-item-detail">
+									<i class="fa fa-phone"></i>
+									<p>tuanlaph03362@gmail.com</p>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">Thẻ</span>
-						<div class="box col-tag-ft">
-							<a href="#" title="Title" class="item-tag">coffee</a>
-							<a href="#" title="Title" class="item-tag">World</a>
-							<a href="#" title="Title" class="item-tag">HTML</a>
-							<a href="#" title="Title" class="item-tag">PHP</a>
+						<div class="widget widget_tag_footer">
+							<span class="box title-footer">Thẻ</span>
+							<div class="box col-tag-ft">
+								<a href="#" title="Title" class="item-tag">coffee</a>
+								<a href="#" title="Title" class="item-tag">World</a>
+								<a href="#" title="Title" class="item-tag">HTML</a>
+								<a href="#" title="Title" class="item-tag">PHP</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">Album Ảnh</span>
-						<div class="box col-album-ft">
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/love-travel-15-556-150x150.jpg">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
-							<a href="#" title="Title" class="item-album">
-								<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
-							</a>
+						<div class="widget widget_album_footer">
+							<span class="box title-footer">Album Ảnh</span>
+							<div class="box col-album-ft">
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/love-travel-15-556-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/love-travel-5-780-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+								<a href="#" title="Title" class="item-album">
+									<img src="theme/frontend/images/fiji3-150x150.jpg" alt="Title" class="responsive">
+								</a>
+							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 col-xs-12">
-						<span class="box title-footer">LIÊN HỆ</span>
-						<div class="box col-form-ft">
-							<form action="" method="" class="">
-								<input type="text" name="email" class="" value="" placeholder="Email">
-								<textarea name="content" id="" cols="30" rows="2" placeholder="Nội dung"></textarea>
-								<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
-							</form>
+						<div class="widget widget_contact_footer">
+							<span class="box title-footer">LIÊN HỆ</span>
+							<div class="box col-form-ft">
+								<form action="." method="post" class="">
+									<input type="text" name="email" class="" value="" placeholder="Email">
+									<textarea name="content" id="noidung" cols="30" rows="2" placeholder="Nội dung"></textarea>
+									<button type="submit" name="gui" class="btn btn-gui">Gửi</button>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -501,68 +587,26 @@
 		</div>
 	</footer>
 
-	<style type="text/css">
-		@keyframes radar {
-		  0% {
-		    width: 150px;
-		    height: 150px;
-		    border: 40px solid #fff;
-		    opacity: 0;
-		  }
+	<div id="goTop" >
+		<div class="go_top" title="Lên trên">
+			<i class="fa fa-arrow-up" aria-hidden="true"></i>
+		</div>
+	</div>
 
-		  50% {
-		    opacity: .1;
-		  }
 
-		  90% {
-		    width: 750px;
-		    height: 750px;
-		    border: 2px solid #fff;
-		    opacity: 0;
-		  }
-
-		  to {
-		    width: 1500px;
-		    height: 1500px;
-		    border: 2px solid #fff;
-		    opacity: 0;
-		  }
-		}
-
-		.open-source {
-		    overflow: hidden;
-		    transform: translate3d(0,0,0);
-		    background-image: linear-gradient(to bottom,#2276d2,#1c5fa8);
-		    padding: 45px 25px 50px;
-		    display: block;
-		}
-		.open-source .icon {
-			  position: relative;
-			  width: 85px;
-			  background-image: url();
-			}
-
-			.open-source .radar {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  border-radius: 50%;
-			  border: 10px solid #fff;
-			  width: 150px;
-			  height: 150px;
-			  transform: translate(-50%,-50%);
-			  animation: radar 2s infinite;
-			  opacity: 0;
-			}
-
-			.open-source .radar:nth-child(2) {
-			  animation-delay: .2s;
-			}
-
-			.open-source .radar:nth-child(3) {
-			  animation-delay: .5s;
-			}
-	</style>
+	<script>
+		waitJquery(function(){
+			jQuery(window).scroll(function() {
+				var top=parseInt(jQuery(window).scrollTop())+parseInt('');
+				jQuery('.ads-left-body, .ads-right-body').animate({
+					'top':top
+				},{
+					duration: 300,
+					queue: false,
+				})
+			});
+		});
+	</script>
 
 	<link href="theme/frontend/css/jquery-ui.min.css" rel="stylesheet" media="screen">
 	<script src="theme/frontend/js/jquery-ui.min.js" defer></script>
@@ -595,16 +639,17 @@
 	</script>
 
 
-  <script type="text/javascript" src="theme/frontend/js/wow.js" defer></script>
-  <script type="text/javascript" src="theme/frontend/js/jquery.easing.1.3.js" defer></script>
-  <script type="text/javascript" src="theme/frontend/js/camera.min.js" defer></script>
+	<script src="theme/frontend/js/wow.js" defer></script>
+	<script src="theme/frontend/js/jquery.easing.1.3.js" defer></script>
+	<script src="theme/frontend/js/camera.min.js" defer></script>
 
-  <script type="text/javascript" src="theme/frontend/js/owl.carousel.js" defer></script>
-  <script type="text/javascript" src="theme/frontend/js/owl.carousel.min.js" defer></script>
+	<script src="theme/frontend/js/owl.carousel.js" defer></script>
+	<script src="theme/frontend/js/owl.carousel.min.js" defer></script>
 
-  <script type="text/javascript" src="theme/frontend/js/script.js" defer></script>
-  <script type="text/javascript" src="theme/frontend/plug/script.js" defer></script>
+	<script src="theme/frontend/js/script.js" defer></script>
+	<script src="theme/frontend/plug/script.js" defer></script>
 
-  <script type="text/javascript" src="theme/frontend/js/jquery.sticky.js" defer></script>
+	<script src="theme/frontend/js/jquery.sticky.js" defer></script>
+
 </body>
 </html>
