@@ -2284,6 +2284,9 @@ footer {
 .tt_wrap .tt_box:last-child {
   margin-right: 0; }
 
+#slide_gallery_tour .owl-controls {
+  display: none; }
+
 .box-title-aside, .box-title-meta {
   background-color: #1bbc9b;
   padding: 15px; }

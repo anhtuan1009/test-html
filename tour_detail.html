@@ -43,7 +43,7 @@
 </head>
 <body>
 	<div class="load" style="display: none;"><img src="theme/frontend/css/images/cri.png" alt="Loadding..."></div>
-	<header class="clear">
+	<header class="clear" id="height_header">
 		<div class="box header-top clear hidden-sm hidden-xs">
 			<div class="container">
 				<div class="row">
@@ -454,7 +454,7 @@
 
 					<div class="space space20"></div>
 
-					<div class="box box_lib_img_tour" id="slide_gallery_tour">
+					<div class="box box_lib_img_tour" id="slide_gallery_tour" data-slider-id="1">
 						<div class="box box-img-item-tour">
 							<img src="theme/frontend/images/fiji2-768x432.jpg" alt="Title" class="responsive">
 						</div>
@@ -566,7 +566,7 @@
 	<div class="space space30"></div>
 
 
-	<article class="box article-1 clear pdtb30">
+	<article class="box article-1 clear pdtb30" id="article_related">
 		<div class="container">
 			<div class="box text-center">
 				<h2 class="title-article pdtb10">Các tour liên quan</h2>
@@ -680,7 +680,7 @@
 
 
 	<div class="box gradient clear"></div>
-	<footer class="box">
+	<footer class="box" id="height_footer">
 		<div class="footer">
 			<div class="container">
 				<div class="row ft_responsive_max991">
@@ -782,7 +782,16 @@
 
 
 	<script>
+
 		waitJquery(function(){
+			if( $(window).width() > 991 ){
+				var limit_top = jQuery('#height_header').outerHeight(true);
+			  	var limit_bottom = jQuery('#article_related').outerHeight(true) + jQuery('#height_footer').outerHeight(true);
+
+			  	console.log(limit_bottom);
+				jQuery(".sidebar_fixed").sticky({ topSpacing: limit_top, bottomSpacing: limit_bottom + 30 });
+			}
+
 			jQuery(window).scroll(function() {
 				var top=parseInt(jQuery(window).scrollTop())+parseInt('');
 				jQuery('.ads-left-body, .ads-right-body').animate({
@@ -832,6 +841,8 @@
 
 	<script src="theme/frontend/js/owl.carousel.js" defer></script>
 	<script src="theme/frontend/js/owl.carousel.min.js" defer></script>
+	<script src="theme/frontend/js/OwlCarousel2Thumbs.min.js" defer></script>
+
 
 	<script src="theme/frontend/js/script.js" defer></script>
 	<script src="theme/frontend/plug/script.js" defer></script>
