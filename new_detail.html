@@ -53,7 +53,7 @@
 
 
 	<div class="load" style="display: none;"><img src="theme/frontend/css/images/cri.png" alt="Loadding..."></div>
-	<header class="clear">
+	<header class="clear" id="height_header">
 		<div class="box header-top clear hidden-sm hidden-xs">
 			<div class="container">
 				<div class="row">
@@ -314,7 +314,7 @@
 
 				</div>
 				<div class="col-sm-4 col-xs-12">
-					<aside class="box box-aside scrool sticky sidebar">
+					<aside class="box box-aside sidebar_fixed">
 						<div class="box widget widget_search_sidebar">
 							<div class="box box-title-aside clear">
 								<span class="title-aside">Tìm kiếm</span>
@@ -347,7 +347,7 @@
 
 	<div class="space space30"></div>
 
-	<article class="box article-list-blog clear pdtb30">
+	<article class="box article-list-blog clear pdtb30" id="article_list_blog">
 		<div class="container">
 			<div class="box text-center">
 				<h2 class="title-article pdtb10">Các tin khác</h2>
@@ -387,7 +387,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="javascript:void(0)" id="book-831" class="book_btn book" title="Đọc tiếp">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -426,7 +426,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="javascript:void(0)" id="book-831" class="book_btn book" title="Đọc tiếp">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -465,7 +465,7 @@
 					    <div class="book_tour_wrap">
 					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque. Maecenas semper erat et justo porta auctor nec lobortis elit[...]</p>
 							<div class="book_wrap wrapper">
-								<a href="javascript:void(0)" id="book-831" class="book_btn book">Đọc tiếp</a>
+								<a href="javascript:void(0)" id="book-831" class="book_btn book" title="Đọc tiếp">Đọc tiếp</a>
 							</div>
 					    </div>
 
@@ -480,7 +480,7 @@
 
 
 	<div class="box gradient clear"></div>
-	<footer class="box">
+	<footer class="box" id="height_footer">
 		<div class="footer">
 			<div class="container">
 				<div class="row ft_responsive_max991">
@@ -582,7 +582,16 @@
 
 
 	<script>
+
 		waitJquery(function(){
+			if( $(window).width() > 991 ){
+				var limit_top = jQuery('#height_header').outerHeight(true);
+			  	var limit_bottom = jQuery('#article_list_blog').outerHeight(true) + jQuery('#height_footer').outerHeight(true);
+
+			  	console.log(limit_bottom);
+				jQuery(".sidebar_fixed").sticky({ topSpacing: limit_top, bottomSpacing: limit_bottom + 30 });
+			}
+
 			jQuery(window).scroll(function() {
 				var top=parseInt(jQuery(window).scrollTop())+parseInt('');
 				jQuery('.ads-left-body, .ads-right-body').animate({

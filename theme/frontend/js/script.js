@@ -86,6 +86,11 @@ jQuery(function($) {
         autoplay:true,
         autoplayTimeout:10000,
         smartSpeed:1500,
+        thumbs: true,
+        thumbImage: true,
+        // thumbsPrerendered: true,
+        thumbContainerClass: 'owl-thumbs',
+        thumbItemClass: 'owl-thumb-item'
     });
 
 

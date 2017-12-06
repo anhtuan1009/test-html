@@ -36,3 +36,40 @@
 .owl-carousel .owl-video-playing .owl-video-play-icon{display:none;}
 .owl-carousel .owl-video-tn{opacity:0;height:100%;background-position:center center;background-repeat:no-repeat;-webkit-background-size:contain;-moz-background-size:contain;-o-background-size:contain;background-size:contain;-webkit-transition:opacity 400ms ease;-moz-transition:opacity 400ms ease;-ms-transition:opacity 400ms ease;-o-transition:opacity 400ms ease;transition:opacity 400ms ease;}
 .owl-carousel .owl-video-frame{position:relative;z-index:1;}
+
+.owl-thumb-item img {
+    width: 100px;
+    height: auto;
+    height: 50px;
+}
+.owl-thumbs {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: table;
+    width: 100%;
+    text-align: center;
+    padding: 5%;
+}
+.owl-thumb-item {
+    display: table-cell;
+    border: none;
+    background: none;
+    padding: 0;
+    opacity: .4;
+    outline: none;
+    border: 0;
+}
+.owl-thumb-item.active {
+    opacity: 1;
+}
+.label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #0a6cff;
+    color: white;
+    padding: 10px 20px;
+    z-index: 5;
+    text-align: center;
+}
