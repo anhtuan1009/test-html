@@ -645,6 +645,20 @@ header {
 .read-more:hover {
   color: #fff; }
 
+.slide-top .item img {
+  min-height: 200px;
+  max-height: 550px; }
+
+.btn-slide-top {
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  position: absolute;
+  width: 20px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center; }
+
 .box-text-slide-top {
   position: absolute;
   display: block;
@@ -2404,6 +2418,9 @@ footer {
   background-color: #1bbc9b;
   border-radius: 0; }
 
+@media (min-width: 768px) {
+  .carousel-caption {
+    display: none; } }
 @media (max-width: 1199px) {
   .book_btn {
     padding: 5px 15px; } }
@@ -2519,6 +2536,9 @@ footer {
   .tab_book .ui-tabs .ui-tabs-nav li a {
     padding: 10px 10px;
     font-size: 13px; }
+
+  .slide_search {
+    margin-top: 20px; }
 
   .search_prices input {
     font-family: "Arial", sans-serif !important;

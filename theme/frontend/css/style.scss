@@ -685,6 +685,21 @@ header {
 }
 .read-more:hover { color: #fff;}
 
+// Start Box Slider
+.slide-top .item img {
+    min-height: 200px;
+    max-height: 550px;
+}
+.btn-slide-top {
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    position: absolute;
+    width: 20px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
 .box-text-slide-top {
     position: absolute;
     display: block;
@@ -2700,6 +2715,7 @@ footer {
 @media (min-width: 992px) {
 }
 @media (min-width: 768px) {
+    .carousel-caption { display: none;}
 }
 
 @media (min-width: 768px) and (max-width: 1199px){
@@ -2818,15 +2834,18 @@ footer {
         margin: auto;
         display: block;
     }
-  .tab_book .ui-tabs .ui-tabs-nav li a {
-    padding: 10px 10px;
-    font-size: 13px;
-  }
-  .search_prices input {
-    font-family: "Arial", sans-serif !important;
-    font-size: 12px !important;
-    padding: 10px;
-  }
+    .tab_book .ui-tabs .ui-tabs-nav li a {
+        padding: 10px 10px;
+        font-size: 13px;
+    }
+    .slide_search {
+        margin-top: 20px;
+    }
+    .search_prices input {
+        font-family: "Arial", sans-serif !important;
+        font-size: 12px !important;
+        padding: 10px;
+    }
 
 }
 @media all and (max-width: 479px) {

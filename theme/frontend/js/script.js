@@ -51,18 +51,18 @@ function callTooltip() {
 
 jQuery(function($) {
 
-    if($('body').find(".slide-top").length > 0){
-        $('.slide-top').camera({
-            // height: 'auto',
-            height: '43%',
-            // loader: 'pie',
-            loader: 'none',
-            pagination: false,
-            thumbnails: false,
-            hover: false,
-            opacityOnGrid: false,
-        });
-    };
+    // if($('body').find(".slide-top").length > 0){
+    //     $('.slide-top').camera({
+    //         // height: 'auto',
+    //         height: '43%',
+    //         // loader: 'pie',
+    //         loader: 'none',
+    //         pagination: false,
+    //         thumbnails: false,
+    //         hover: false,
+    //         opacityOnGrid: false,
+    //     });
+    // };
 
     $("#btn-buy").click(function(){
         $("#sdt").addClass("show-tel", {duration:600,effect:'blind'});
@@ -249,6 +249,24 @@ jQuery(function($) {
     });
     $(".map iframe").mouseleave(function() {
         $(".map iframe").css("pointer-events", "none"); 
+    });
+
+    $(".fancy_album").fancybox({
+        'transitionIn'  :   'elastic',
+        'transitionOut' :   'elastic',
+        'speedIn'       :   600, 
+        'speedOut'      :   200, 
+        'overlayShow'   :   false,
+        'autoScale': true,
+        helpers: {
+            thumbs: {
+                width: 50,
+                height: 50
+            }
+        },
+        afterLoad : function() {
+            this.title = 'Ảnh ' + (this.index + 1) + ' / ' + this.group.length + (this.title ? ' - ' + this.title : '');
+        }
     });
 
 
