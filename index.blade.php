@@ -25,7 +25,7 @@
 
     <link href="theme/frontend/css/style.css" type="text/css" rel="stylesheet" />
 
-  <script src="theme/frontend/js/jquery-2.2.1.min.js"></script>
+  <script src="theme/frontend/js/jquery-3.4.1.min.js"></script>
 
 </head>
 <body>
